@@ -260,8 +260,7 @@ cohortTableExposuresGpop_db %>%
   collect()) %>% 
   filter(n>5) %>% 
   select(cohort_definition_id),
-  by=c("id"="cohort_definition_id")) %>%
-  mutate(id=1:nrow(.))
+  by=c("id"="cohort_definition_id"))
 
 
 outcome.cohorts<-outcome.cohorts %>% 

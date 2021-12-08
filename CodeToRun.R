@@ -1,6 +1,6 @@
 
-#install.packages("renv") # if not already installed, install renv from CRAN
-#renv::restore() # this should prompt you to install the various packages required for the study
+# install.packages("renv") # if not already installed, install renv from CRAN
+# renv::restore() # this should prompt you to install the various packages required for the study
 # renv::activate()
 
 # packages -----

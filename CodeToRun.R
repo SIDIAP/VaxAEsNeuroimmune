@@ -92,7 +92,11 @@ run.covid.cohorts<-TRUE
 run.general.pop.cohorts<-TRUE
 
 # dates for vaccination and SARS-CoV-2 cohorts -----
+
+#start date for vaccinated cohorts in sidiap: dmy("27/12/2020")
+#start date for vaccinated cohorts in cprd: dmy("08/12/2020")
 start_date_vacc <- dmy("27/12/2020") #start date for vaccinated cohorts
+
 start_date_covid <- dmy("01/09/2020") #start date for covid-19 cohorts
 
 # run the background rates analysis ----

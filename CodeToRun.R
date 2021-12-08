@@ -95,7 +95,7 @@ run.general.pop.cohorts<-TRUE
 start_date_vacc <- dmy("27/12/2020") #start date for vaccinated cohorts
 start_date_covid <- dmy("01/09/2020") #start date for covid-19 cohorts
 
-# run the analysis ----
+# run the background rates analysis ----
 run.analysis.with.sampling<-FALSE
 start<-Sys.time()
 source(here("2_BackgroundRatesAnalysis" ,"RunBackgroundRatesAnalysis.R"))

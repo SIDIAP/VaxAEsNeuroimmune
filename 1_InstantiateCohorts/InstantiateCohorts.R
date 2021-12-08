@@ -709,45 +709,45 @@ print(paste("--- Inserting", "cohortTableExposuresVax_w_21days_db", "took",
 #   tally() %>% collect() %>% pull())
 
 # add indexes ----
-sql_query <- glue::glue( "CREATE INDEX CovVaxOutcomes_idx ON {results_database_schema}.{cohortTableOutcomes}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-sql_query <- glue::glue( "CREATE INDEX Cov_idx ON {results_database_schema}.{cohortTableExposuresCov}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-sql_query <- glue::glue( "CREATE INDEX Cov_w_history_idx ON {results_database_schema}.{cohortTableExposuresCov_w_history}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-sql_query <- glue::glue( "CREATE INDEX Cov_w_21days_idx ON {results_database_schema}.{cohortTableExposuresCov_w_21days}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-
-sql_query <- glue::glue( "CREATE INDEX Vax_idx ON {results_database_schema}.{cohortTableExposuresVax}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-sql_query <- glue::glue( "CREATE INDEX Vax_w_history_idx ON {results_database_schema}.{cohortTableExposuresVax_w_history}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-sql_query <- glue::glue( "CREATE INDEX Vax_w_21days_idx ON {results_database_schema}.{cohortTableExposuresVax_w_21days}",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
-
-sql_query <- glue::glue( "CREATE INDEX Gpop_idx ON {results_database_schema}.{cohortTableExposuresGpop} ",
-                          "(cohort_definition_id, subject_id)")
-sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
-DBI::dbExecute(db, sql_query)
+# sql_query <- glue::glue( "CREATE INDEX CovVaxOutcomes_idx ON {results_database_schema}.{cohortTableOutcomes}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# sql_query <- glue::glue( "CREATE INDEX Cov_idx ON {results_database_schema}.{cohortTableExposuresCov}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# sql_query <- glue::glue( "CREATE INDEX Cov_w_history_idx ON {results_database_schema}.{cohortTableExposuresCov_w_history}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# sql_query <- glue::glue( "CREATE INDEX Cov_w_21days_idx ON {results_database_schema}.{cohortTableExposuresCov_w_21days}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# 
+# sql_query <- glue::glue( "CREATE INDEX Vax_idx ON {results_database_schema}.{cohortTableExposuresVax}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# sql_query <- glue::glue( "CREATE INDEX Vax_w_history_idx ON {results_database_schema}.{cohortTableExposuresVax_w_history}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# sql_query <- glue::glue( "CREATE INDEX Vax_w_21days_idx ON {results_database_schema}.{cohortTableExposuresVax_w_21days}",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
+# 
+# sql_query <- glue::glue( "CREATE INDEX Gpop_idx ON {results_database_schema}.{cohortTableExposuresGpop} ",
+#                           "(cohort_definition_id, subject_id)")
+# sql_query<-SqlRender::translate(sql_query, targetDialect = targetDialect)
+# DBI::dbExecute(db, sql_query)
 
 

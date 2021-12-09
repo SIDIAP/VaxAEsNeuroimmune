@@ -102,7 +102,7 @@ start_date_covid <- dmy("01/09/2020") #start date for covid-19 cohorts
 # run the background rates analysis ----
 run.analysis.with.sampling<-FALSE
 start<-Sys.time()
-source(here("2_BackgroundRatesAnalysis" ,"RunBackgroundRatesAnalysis.R"))
+source(here("RunAnalysis.R"))
 Sys.time()-start
 
 

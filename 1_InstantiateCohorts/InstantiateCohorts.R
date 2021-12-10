@@ -678,7 +678,7 @@ DBI::dbExecute(db, as.character(sql_query))
 sql_query <- glue::glue("SELECT * \n",
                           "INTO {results_database_schema}.{cohortTableExposuresVax_w_21days}\n",
                           " FROM (\n",
-                          dbplyr::sql_render(cohortTableExposuresVax_w_history_db),
+                          dbplyr::sql_render(cohortTableExposuresVax_w_21days_db),
                           "\n) AS from_table")
 DBI::dbExecute(db, as.character(sql_query))
 

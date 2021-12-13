@@ -15,68 +15,72 @@ library(dplyr)
 library(stringr)
 library(tidyr)
 library(epitools)
-library(htmltools)
+
 #### Load data -----
-load(here("/data", "Network.patient.characteristcis.RData"))
-load(here("/data", "Network.Survival.summary.RData"))
-load(here("/data", "Network.IR.RData"))
+load(here("data", "Network.patient.characteristcis.RData")) 
+Network.patient.characteristcis<-Network.patient.characteristcis%>% 
+  filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
+load(here("data", "Network.Survival.summary.RData"))
+Network.Survival.summary<-Network.Survival.summary%>% 
+  filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
+Network.Survival.summary<-Network.Survival.summary %>% 
+  mutate(`Cumulative incidence`=ifelse(Events %in% c(0,1,2,3,4), " ", 
+                                       `Cumulative incidence`)) %>% 
+  mutate(Events=ifelse(Events %in% c(0,1,2,3,4), "<5",Events))
 
-load(here("/data", "COVID_diagnosis_21d_background.pop.IRR.RData"))
-load(here("/data", "COVID_diagnosis_90d_background.pop.IRR.RData"))
+load(here("data", "Network.IR.RData"))
+Network.IR<-Network.IR%>% 
+  filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
 
+load(here("data", "COVID_diagnosis_21d_background.pop.IRR.RData"))
+load(here("data", "COVID_diagnosis_90d_background.pop.IRR.RData"))
 # load(file = here("data", "COVID_diagnosis_background.pop.visit.IRR.RData"))
-load(file = here("/data", "AZ1_background.pop.IRR.RData"))
-load(file = here("/data", "AZ1.no.covid_background.pop.IRR.RData"))
-load(file = here("/data", "AZ2_background.pop.IRR.RData"))
-load(file = here("/data", "AZ2.no.covid_background.pop.IRR.RData"))
-
+load(file = here("data", "AZ1_background.pop.IRR.RData"))
+# load(file = here("data", "AZ.no.covid_background.pop.IRR.RData"))
 # load(file = here("data", "AZ_background.pop.visit.IRR.RData"))
-load(file = here("/data", "Pf1_background.pop.IRR.RData"))
-load(file = here("/data", "Pf1.no.covid_background.pop.IRR.RData"))
-# load(file = here("Shiny CovVax/data", "Pf1_background.pop.visit.IRR.RData"))
-load(file = here("/data", "Pf2_background.pop.IRR.RData"))
-load(file = here("/data", "Pf2.no.covid_background.pop.IRR.RData"))
+load(file = here("data", "AZ2_background.pop.IRR.RData"))
+# load(file = here("data", "AZ2.no.covid_background.pop.IRR.RData"))
+load(file = here("data", "Pf1_background.pop.IRR.RData"))
+load(file = here("data", "Pf1.no.covid_background.pop.IRR.RData"))
+# load(file = here("data", "Pf1_background.pop.visit.IRR.RData"))
+load(file = here("data", "Pf2_background.pop.IRR.RData"))
+load(file = here("data", "Pf2.no.covid_background.pop.IRR.RData"))
 # load(file = here("data", "Pf2_background.pop.visit.IRR.RData"))
-
 load(file = here("data", "Mod1_background.pop.IRR.RData"))
-load(file = here("/data", "Mod1.no.covid_background.pop.IRR.RData"))
-#load(file = here("/data", "Mod2.no.covid_background.pop.IRR.RData"))#no hi ha prous casos per calcular IRR? (n<5)
+load(file = here("data", "Mod1.no.covid_background.pop.IRR.RData"))
+
+load(file = here("data", "Mod2_background.pop.IRR.RData"))
 # load(file = here("data", "Mod1_background.pop.visit.IRR.RData"))
 # load(file = here("data", "Mod2_background.pop.IRR.RData"))
+# load(file = here("data", "Mod2_background.pop.visit.IRR.RData"))
 load(file = here("data", "Jnj_background.pop.IRR.RData"))
+load(file = here("data", "Jnj.no.covid_background.pop.IRR.RData"))
 
-#load(here("/data", "Any1_background.pop.IRR.RData"))
-#load(here("/data", "Any1.no.covid_background.pop.IRR.RData"))
-
-load(here("/data", "COVID_diagnosis_21d_background.pop.IRS.RData"))
-load(here("/data", "COVID_diagnosis_90d_background.pop.IRS.RData"))
-
+load(here("data", "COVID_diagnosis_21d_background.pop.IRS.RData"))
+load(here("data", "COVID_diagnosis_21d_background.pop.IRS.RData"))
 # load(here("data", "COVID_diagnosis_background.pop.visit.IRS.RData"))
-load(here("/data", "AZ1_background.pop.IRS.RData"))
-load(here("/data", "AZ1.no.covid_background.pop.IRS.RData"))
-load(file = here("/data", "AZ2_background.pop.IRS.RData"))
-load(file = here("/data", "AZ2.no.covid_background.pop.IRS.RData"))
-# load(here("/data", "AZ_background.pop.visit.IRS.RData"))
-load(here("/data", "Pf1_background.pop.IRS.RData"))
-load(here("/data", "Pf1.no.covid_background.pop.IRS.RData"))
+load(here("data", "AZ1_background.pop.IRS.RData"))
+load(here("data", "AZ2.no.covid_background.pop.IRS.RData"))
+load(here("data", "AZ2_background.pop.IRS.RData"))
+load(here("data", "AZ2.no.covid_background.pop.IRS.RData"))
+# load(here("data", "AZ_background.pop.visit.IRS.RData"))
+load(here("data", "Pf1_background.pop.IRS.RData"))
+load(here("data", "Pf1.no.covid_background.pop.IRS.RData"))
 # load(here("data", "Pf1_background.pop.visit.IRS.RData"))
-load(here("/data", "Pf2_background.pop.IRS.RData"))
-load(here("/data", "Pf2.no.covid_background.pop.IRS.RData"))
+load(here("data", "Pf2_background.pop.IRS.RData"))
+load(here("data", "Pf2.no.covid_background.pop.IRS.RData"))
 # load(here("data", "Pf2_background.pop.visit.IRS.RData"))
  
 load(here("data", "Mod1_background.pop.IRS.RData"))
-load(here("/data", "Mod1.no.covid_background.pop.IRS.RData"))
+load(here("data", "Mod1.no.covid_background.pop.IRS.RData"))
 # load(here("data", "Mod1_background.pop.visit.IRS.RData"))
 load(here("data", "Mod2_background.pop.IRS.RData"))
-load(here("/data", "Mod2.no.covid_background.pop.IRS.RData"))
 # load(here("data", "Mod2_background.pop.visit.IRS.RData"))
 # 
 load(here("data", "Jnj_background.pop.IRS.RData"))
-load(here("/data", "Jnj.no.covid_background.pop.IRS.RData"))
+load(here("data", "Jnj.no.covid_background.pop.IRS.RData"))
 # load(here("data", "Jnj_background.pop.visit.IRS.RData"))
 
-#load(here("/data", "Any1_background.pop.IRS.RData"))
-#(here("/data", "Any1.no.covid_background.pop.IRS.RData"))
 
 # printing numbers with 1 decimal place and commas 
 nice.num<-function(x) {
@@ -95,7 +99,8 @@ ui <-  fluidPage(theme = shinytheme("spacelab"),
                  
 # title ------ 
 # shown across tabs
-titlePanel("Incidence of neurological events among persons vaccinated against SARS-CoV-2"),
+titlePanel("Incidence of immune-mediated neurological events
+           among persons vaccinated against or infected with SARS-CoV-2"),
                
 # set up: pages along the side -----  
                  navlistPanel(
@@ -123,17 +128,17 @@ tabPanel("Patient Profiles",
     a population strata, and which populations are to be summarised."),
     tags$hr(),
     
-  #     div(style="display: inline-block;vertical-align:top; width: 150px;",
-  #         pickerInput(inputId = "CohortProfileDatabaseSelector", 
-  # label = "Database", 
-  # choices = unique(Network.patient.characteristcis$db), 
-  # selected = unique(Network.patient.characteristcis$db)[1], 
-  # options = list(
-  #   `actions-box` = TRUE, 
-  #   size = 10,
-  #   `selected-text-format` = "count > 3"), 
-  # multiple = TRUE)
-  #         ),
+      div(style="display: inline-block;vertical-align:top; width: 150px;",
+          pickerInput(inputId = "CohortProfileDatabaseSelector",
+  label = "Database",
+  choices = unique(Network.patient.characteristcis$db),
+  selected = unique(Network.patient.characteristcis$db)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)
+          ),
   
            div(style="display: inline-block;vertical-align:top; width: 150px;",
                 pickerInput(inputId = "CohortProfileStudyPopulationTypeSelector", 
@@ -149,9 +154,8 @@ tabPanel("Patient Profiles",
   div(style="display: inline-block;vertical-align:top; width: 250px;",
                 pickerInput(inputId = "CohortProfileStudyPopulationSelector", 
   label = "Study month (vaccinated)", 
-  #choices = unique(Network.patient.characteristcis$pop.type[which(!is.na(Network.patient.characteristcis$pop.type))]), #2610: Je eliminat pero sha de mantenir
-  choices = c("All"),
-#  selected = unique(Network.patient.characteristcis$pop.type[which(!is.na(Network.patient.characteristcis$pop.type))])[1],
+  choices = unique(Network.patient.characteristcis$pop.type[which(!is.na(Network.patient.characteristcis$pop.type))]),
+  selected = unique(Network.patient.characteristcis$pop.type[which(!is.na(Network.patient.characteristcis$pop.type))])[1],
   options = list(
     `actions-box` = TRUE, 
     size = 10,
@@ -184,8 +188,8 @@ tabPanel("Patient Profiles",
   div(style="display: inline-block;vertical-align:top; width: 150px;",
   pickerInput(inputId = "CohortProfileOutcomeSelector",
   label = "Cohort",
-  choices = c("Study population", sort(names(Network.patient.characteristcis)[!names(Network.patient.characteristcis) %in% c("id","var","db","pop", "study.year", "end.year","prior.obs.required" , "Study population", "age_gr2","pop.type")])), 
-  selected = c("Study population", sort(names(Network.patient.characteristcis)[!names(Network.patient.characteristcis) %in% c("id","var","db","pop", "study.year", "end.year","prior.obs.required" , "Study population", "age_gr2","pop.type")]))[1], 
+  choices = c("Study population", sort(names(Network.patient.characteristcis)[!names(Network.patient.characteristcis) %in% c("id","var","db","pop", "study.year", "end.year","prior.obs.required" , "pop.type","Study population", "age_gr2")])),
+  selected = c("Study population", sort(names(Network.patient.characteristcis)[!names(Network.patient.characteristcis) %in% c("id","var","db","pop", "study.year", "end.year","prior.obs.required" , "pop.type","Study population", "age_gr2")]))[1],
   options = list(
     `actions-box` = TRUE,
     size = 10,
@@ -209,16 +213,16 @@ tabPanel("Patient Profiles",
             the outcome of interest. "),
     tags$hr(),
 
-  #    div(style="display: inline-block;vertical-align:top; width: 150px;",
-  #    pickerInput(inputId = "IncDatabaseSelector",
-  # label = "Database",
-  # choices = unique(Network.Survival.summary$db),
-  # selected = unique(Network.Survival.summary$db)[1],
-  # options = list(
-  #   `actions-box` = TRUE,
-  #   size = 10,
-  #   `selected-text-format` = "count > 3"),
-  # multiple = TRUE)),
+     div(style="display: inline-block;vertical-align:top; width: 150px;",
+     pickerInput(inputId = "IncDatabaseSelector",
+  label = "Database",
+  choices = unique(Network.Survival.summary$db),
+  selected = unique(Network.Survival.summary$db)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
 
              div(style="display: inline-block;vertical-align:top; width: 150px;",
                 pickerInput(inputId = "IncStudyPopulationTypeSelector",
@@ -234,8 +238,7 @@ tabPanel("Patient Profiles",
   div(style="display: inline-block;vertical-align:top; width: 250px;",
       pickerInput(inputId = "IncPopulationSelector",
   label = "Study month (vaccinated)",
- # choices = unique(Network.Survival.summary$pop.type),  #2610 BERTA SUBSTITUEIXO"
- choices = c("All"),
+  choices = unique(Network.Survival.summary$pop.type),
   selected = unique(Network.Survival.summary$pop.type)[1],
     # c("Date anchored: 1st January 2017",
     #           "Visit anchored",
@@ -314,16 +317,16 @@ tabPanel("Patient Profiles",
     whether a year of prior history was required for individuals, the statification of interest, and
             the outcome and time point of interest."),
     tags$hr(),
-  #    div(style="display: inline-block;vertical-align:top; width: 150px;",
-  #    pickerInput(inputId = "IRsDatabaseSelector",
-  # label = "Database",
-  # choices = unique(Network.IR$db),
-  # selected = unique(Network.IR$db)[1],
-  # options = list(
-  #   `actions-box` = TRUE,
-  #   size = 10,
-  #   `selected-text-format` = "count > 3"),
-  # multiple = TRUE)),
+     div(style="display: inline-block;vertical-align:top; width: 150px;",
+     pickerInput(inputId = "IRsDatabaseSelector",
+  label = "Database",
+  choices = unique(Network.IR$db),
+  selected = unique(Network.IR$db)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
 
                div(style="display: inline-block;vertical-align:top; width: 150px;",
                 pickerInput(inputId = "IRsStudyPopulationTypeSelector",
@@ -340,8 +343,7 @@ tabPanel("Patient Profiles",
   div(style="display: inline-block;vertical-align:top; width: 250px;",
       pickerInput(inputId = "IRsPopulationSelector",
   label = "Study month (vaccinated)",
-#  choices = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))]), #2610 Berta
-choices= c("All"),
+  choices = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))]),
   selected = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))])[1],
     # c("Date anchored: 1st January 2017",
     #           "Visit anchored",
@@ -426,203 +428,203 @@ prettyCheckbox(
   plotlyOutput("IR.plot.overall"))
    ,
 # Incidence rate ratios ------
-tabPanel("Incidence Rate Ratios",
-         
-         tags$h3("Incidence Rate Ratios"),
-         tags$h5("Incidence rates ratios. Select the target and comparator populations,
+
+ tabPanel("Incidence Rate Ratios",
+
+    tags$h3("Incidence Rate Ratios"),
+    tags$h5("Incidence rates ratios. Select the target and comparator populations,
     whether a year of prior
     history was required, Select the study population used,
     a specific study month (for those vaccinated),
     whether a year of prior history was required for individuals, the time window,
     the statification of interest, and
             the outcome of interest."),
-         tags$hr(),
-         #    div(style="display: inline-block;vertical-align:top; width: 150px;",
-         #    pickerInput(inputId = "IRsDatabaseSelector",
-         # label = "Database",
-         # choices = unique(Network.IR$db),
-         # selected = unique(Network.IR$db)[1],
-         # options = list(
-         #   `actions-box` = TRUE,
-         #   size = 10,
-         #   `selected-text-format` = "count > 3"),
-         # multiple = TRUE)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 150px;",
-             pickerInput(inputId = "IRRTargetStudyPopulationTypeSelector",
-                         label = "Target",
-                         choices = c("COVID-19 diagnosis 21d","COVID-19 diagnosis 90d",
-                                     "ChAdOx1 first-dose", "ChAdOx1 first-dose (no prior covid)", 
-                                     "ChAdOx1 second-dose", "ChAdOx1 second-dose (no prior covid)", 
-                                     "BNT162b2 first-dose","BNT162b2 first-dose (no prior covid)",
-                                     "BNT162b2 second-dose" ,"BNT162b2 second-dose (no prior covid)",#,
-                                     #"Any first-dose", "Any first-dose (no prior covid)"
-                                      "mRNA-1273 first-dose","mRNA-1273 first-dose (no prior covid)" , 
-                                     "mRNA-1273 second-dose","mRNA-1273 second-dose (no prior covid)",
-                                     "Ad26.COV2.S first-dose","Ad26.COV2.S first-dose (no prior covid)"
-                         ),
-                          selected = c("COVID-19 diagnosis 21d"),
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                       `selected-text-format` = "count > 3"),
-                         multiple = TRUE)),
- 
-         div(style="display: inline-block;vertical-align:top; width: 150px;",
-             pickerInput(inputId = "IRRComparatorStudyPopulationTypeSelector",
-                         label = "Comparator",
-                         choices = c("General population (index date: 1st December)"
-                                     # ,
-                                     # "General population (index date: first visit/ contact)"
-                         ),
-                         selected = c("General population (index date: 1st December)"),
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                         `selected-text-format` = "count > 3"),
-                         multiple = FALSE)),
-         
-         
-         
-         div(style="display: inline-block;vertical-align:top; width: 150px;",
-             pickerInput(inputId = "IRRPopulationSelector",
-                         label = "Target study period",
-                        # choices = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))]), #2610 berta
-                        choices = c("All"),
-                         selected = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))])[1],
-                         # c("Date anchored: 1st January 2017",
-                         #           "Visit anchored",
-                         #           "Visit anchored (28 days follow up)"),
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                           `selected-text-format` = "count > 3"),
-                         multiple = FALSE)),
-         
-         
-         
-         div(style="display: inline-block;vertical-align:top; width: 250px;",
-             pickerInput(inputId = "IRRStudyPopulationSelector",
-                         label = "Year of prior history required",
-                         choices = rev(unique(Network.IR$prior.obs.required)),
-                         selected = rev(unique(Network.IR$prior.obs.required))[1],
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                           `selected-text-format` = "count > 3"),
-                         multiple = FALSE)),
-         div(style="display: inline-block;vertical-align:top; width: 250px;",
-             pickerInput(inputId = "IRRTimeWindowSelector",
-                         label = "Time window relative to index date",
-                         choices = as.character(unique(Network.IR$time.window[which(!is.na(Network.IR$time.window))])),
-                         selected = as.character(unique(Network.IR$time.window[which(!is.na(Network.IR$time.window))]))[1],
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                           `selected-text-format` = "count > 3"),
-                         multiple = FALSE)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 150px;",
-             pickerInput(inputId = "IRRStrataSelector",
-                         label = "Strata",
-                         choices = c("Overall (standardised)",
-                                     "overall",
-                                     "Sex",
-                                     "Age group (<=44, 45-64, >=65)",
-                                     "Age group (<=44, 45-64, >=65) and sex",
-                                     "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85)",
-                                     "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85) and sex",
-                                     "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80)",
-                                     "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80) and sex",
-                                     "Condition of interest",
-                                     "Medication of interest",
-                                     "Condition or medication of interest",
-                                     "Age group (<=44, 45-64, >=65), sex, and condition of interest",
-                                     "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85), sex, and condition of interest",
-                                     "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80), sex, and condition of interest",
-                                     "Age group (<=44, 45-64, >=65), sex, and medication of interest",
-                                     "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85), sex, and medication of interest",
-                                     "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80), sex, and medication of interest",
-                                     "Age group (<=44, 45-64, >=65), sex, and medication of interest",
-                                     "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85), sex, and condition or medication of interest",
-                                     "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80), sex, and condition or medication of interest") ,
-                         selected = "Overall (standardised)",
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                         `selected-text-format` = "count > 3"),
-                         multiple = FALSE)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 150px;",
-             pickerInput(inputId = "IRROutcomeSelector",
-                         label = "Outcome",
-                         choices = sort(unique(c(
-                           #BERAT
-                           unique(COVID_diagnosis_21d_background.pop.IRR$outcome.name),
-                           unique(COVID_diagnosis_90d_background.pop.IRR$outcome.name),
-                           unique(AZ1_background.pop.IRR$outcome.name),
-                           unique(AZ2_background.pop.IRR$outcome.name),
-                           # unique(AZ_background.pop.IRR$outcome.name),
-                           unique(Pf1_background.pop.IRR$outcome.name),
-                           unique(Pf1_background.pop.IRR$outcome.name)))) ,
-                         selected = sort(unique(c(
-                           # unique(COVID_diagnosis_background.pop.IRR$outcome.name),
-                           # unique(COVID_diagnosis_background.pop.visit.IRR$outcome.name),
-                           unique(AZ1_background.pop.IRR$outcome.name),
-                           # unique(AZ_background.pop.IRR$outcome.name),
-                           unique(Pf1_background.pop.IRR$outcome.name),
-                           unique(Pf1_background.pop.IRR$outcome.name))))[1],
-                         options = list(
-                           `actions-box` = TRUE,
-                           size = 10,
-                            `selected-text-format` = "count > 3"),
-                         multiple = TRUE)),
-         tags$hr(),
-         #   prettyCheckbox(
-         #   inputId = "IRR_log_scale", label = "Plot x axis on log scale", icon = icon("check")
-         # ),
-         plotlyOutput("IRR.plot.overall")
-         # ,
-         # tags$hr(),
-         # DTOutput('tbl.IRR')
+    tags$hr(),
+     div(style="display: inline-block;vertical-align:top; width: 150px;",
+     pickerInput(inputId = "IRRDatabaseSelector",
+  label = "Database",
+  choices = unique(Network.IR$db),
+  selected = unique(Network.IR$db)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
+
+               div(style="display: inline-block;vertical-align:top; width: 150px;",
+                pickerInput(inputId = "IRRTargetStudyPopulationTypeSelector",
+  label = "Target",
+  choices = unique(Network.IR$pop[which(!is.na(Network.IR$pop))]),
+  selected = unique(Network.IR$pop[which(!is.na(Network.IR$pop))])[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
+
+                 div(style="display: inline-block;vertical-align:top; width: 150px;",
+                pickerInput(inputId = "IRRComparatorStudyPopulationTypeSelector",
+  label = "Comparator",
+  choices = c("General population (index date: 1st December)"
+              # ,
+              # "General population (index date: first visit/ contact)"
+              ),
+  selected = c("General population (index date: 1st December)"),
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+
+
+
+  div(style="display: inline-block;vertical-align:top; width: 150px;",
+      pickerInput(inputId = "IRRPopulationSelector",
+  label = "Target study period",
+  choices = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))]),
+  selected = unique(Network.IR$pop.type[which(!is.na(Network.IR$pop.type))])[1],
+    # c("Date anchored: 1st January 2017",
+    #           "Visit anchored",
+    #           "Visit anchored (28 days follow up)"),
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+
+
+
+    div(style="display: inline-block;vertical-align:top; width: 250px;",
+        pickerInput(inputId = "IRRStudyPopulationSelector",
+  label = "Year of prior history required",
+  choices = rev(unique(Network.IR$prior.obs.required)),
+  selected = rev(unique(Network.IR$prior.obs.required))[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+
+    div(style="display: inline-block;vertical-align:top; width: 250px;",
+        pickerInput(inputId = "IRRTimeWindowSelector",
+  label = "Time window relative to index date",
+  choices = as.character(unique(Network.IR$time.window[which(!is.na(Network.IR$time.window))])),
+  selected = as.character(unique(Network.IR$time.window[which(!is.na(Network.IR$time.window))]))[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+
+  div(style="display: inline-block;vertical-align:top; width: 150px;",
+      pickerInput(inputId = "IRRStrataSelector",
+  label = "Strata",
+  choices = c("Overall (standardised)",
+              "overall",
+               "Sex",
+               "Age group (<=44, 45-64, >=65)",
+              "Age group (<=44, 45-64, >=65) and sex",
+               "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85)",
+              "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85) and sex",
+               "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80)",
+              "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80) and sex",
+    "Condition of interest",
+    "Medication of interest",
+    "Condition or medication of interest",
+     "Age group (<=44, 45-64, >=65), sex, and condition of interest",
+     "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85), sex, and condition of interest",
+      "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80), sex, and condition of interest",
+      "Age group (<=44, 45-64, >=65), sex, and medication of interest",
+      "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85), sex, and medication of interest",
+      "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80), sex, and medication of interest",
+      "Age group (<=44, 45-64, >=65), sex, and medication of interest",
+      "Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85), sex, and condition or medication of interest",
+      "Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80), sex, and condition or medication of interest") ,
+  selected = "Overall (standardised)",
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+
+  div(style="display: inline-block;vertical-align:top; width: 150px;",
+      pickerInput(inputId = "IRROutcomeSelector",
+  label = "Outcome",
+  choices = sort(unique(c(
+    # unique(COVID_diagnosis_background.pop.IRR$outcome.name),
+# unique(COVID_diagnosis_background.pop.visit.IRR$outcome.name),
+# unique(AZ_background.pop.IRR$outcome.name),
+# unique(AZ_background.pop.IRR$outcome.name),
+unique(Pf1_background.pop.IRR$outcome.name),
+unique(Pf1_background.pop.IRR$outcome.name)))) ,
+  selected = sort(unique(c(
+    # unique(COVID_diagnosis_background.pop.IRR$outcome.name),
+# unique(COVID_diagnosis_background.pop.visit.IRR$outcome.name),
+# unique(AZ_background.pop.IRR$outcome.name),
+# unique(AZ_background.pop.IRR$outcome.name),
+unique(Pf1_background.pop.IRR$outcome.name),
+unique(Pf1_background.pop.IRR$outcome.name))))[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
+  tags$hr(),
+#   prettyCheckbox(
+#   inputId = "IRR_log_scale", label = "Plot x axis on log scale", icon = icon("check")
+# ),
+  plotlyOutput("IRR.plot.overall")
+  # ,
+  # tags$hr(),
+  # DTOutput('tbl.IRR')
 )
 
-
- 
-# close -----                 
-                 ))                                                 
+# close -----
+                                                   ))
 
 #### SERVER ------
 server <-	function(input, output, session) {
   
 get.patient.characteristcis<-reactive({
-     
-    table<-Network.patient.characteristcis %>% 
+    # browser()
+table<-Network.patient.characteristcis %>%
+      filter(db %in% input$CohortProfileDatabaseSelector ) %>% 
       filter(pop %in% input$CohortProfileStudyPopulationTypeSelector) %>% 
-      filter(pop.type %in% input$CohortProfileStudyPopulationSelector | 
+      filter(pop.type %in% input$CohortProfileStudyPopulationSelector |
              is.na(pop.type)) %>% 
       filter(prior.obs.required%in%input$CohortProfilePriorHistorySelector) %>% 
       filter(age_gr2%in%input$CohortProfilePriorAgeSelector) %>% 
       select(-"id") %>% 
-      select(var, pop, input$CohortProfileOutcomeSelector)
+      select(var, pop, input$CohortProfileOutcomeSelector, db)
   
-  table<-table  %>%
-  pivot_wider(names_from = pop,
-             names_glue = "{pop}: {.value}",
-              values_from = input$CohortProfileOutcomeSelector)
+# drop medea
+table<-table %>% 
+  filter(str_detect(var, "Med", negate=TRUE))
+
+table<-table %>% 
+  mutate(pop_db=paste0(pop, " [", db, "]")) %>% 
+  select(-c(pop, db))
+
+    
+table<-table  %>%
+  pivot_wider(names_from = pop_db,
+             names_glue = "{pop_db}: {.value}",
+              values_from = input$CohortProfileOutcomeSelector) 
+
+ #    browser()
+ # table<-bind_rows(
+ #     table[c(1:31),],
+ #    table[c(1),]  %>%
+ #      mutate_at(vars(names(table)), ~ replace(., !is.na(.), NA)) %>%
+ #      mutate(var="Comorbidities"),
+ #     table[c(18:27),],
+ #    table[c(1),]  %>%
+ #      mutate_at(vars(names(table)), ~ replace(., !is.na(.), NA)) %>%
+ #      mutate(var="Medication use (183 days prior to four days prior)"),
+ #    table[c(28:31),]
+ #    )  
  
-  
- table<-bind_rows(
-     table[c(1:18),],
-    table[c(1),]  %>%
-      mutate_at(vars(names(table)), ~ replace(., !is.na(.), NA)) %>%
-      mutate(var="Comorbidities"),
-     table[c(19:31),],
-    table[c(1),]  %>%
-      mutate_at(vars(names(table)), ~ replace(., !is.na(.), NA)) %>%
-      mutate(var="Medication use (183 days prior to four days prior)"),
-    table[c(32:43),]
-    )   %>%
+ table<- table %>%
      mutate(var=ifelse(var=="Copd", "COPD", var)) %>%
      mutate(var=ifelse(var=="Antiinflamatory and antirheumatic", "Non-steroidal anti-inflammatory drugs ", var)) %>%
      mutate(var=ifelse(var=="Coxibs", "Cox2 inhibitors ", var)) %>%
@@ -632,24 +634,28 @@ get.patient.characteristcis<-reactive({
      mutate(var=ifelse(var=="Antineoplastic immunomodulating", "Antineoplastic and immunomodulating agents ", var)) %>%
      mutate(var=ifelse(var=="Hormonal contraceptives", "Hormonal contraceptives for systemic use ", var)) %>%
      mutate(var=ifelse(var=="Sex hormones modulators", "Sex hormones and modulators of the genital system", var))%>%
-     mutate(var=ifelse(var=="Age.30 39", "Age: 30 to 39", var))  %>%
+     mutate(var=ifelse(var=="Age.18 29", "Age: 18 to 29", var))  %>%
+   mutate(var=ifelse(var=="Age.30 39", "Age: 30 to 39", var))  %>%
      mutate(var=ifelse(var=="Age.40 49", "Age: 40 to 49", var))  %>%
      mutate(var=ifelse(var=="Age.50 59", "Age: 50 to 59", var))  %>%
      mutate(var=ifelse(var=="Age.60 69", "Age: 60 to 69", var))  %>%
      mutate(var=ifelse(var=="Age.70 79", "Age: 70 to 79", var))  %>%
-     mutate(var=ifelse(var=="Age.80u", "Age: 80 or older", var))  %>%
-     mutate(var=str_replace(var, "Medea.u", "MEDEA: ")) %>%
-     mutate(var=str_replace(var, "Medea.miss", "MEDEA: Missing"))   %>%
-     mutate(var=str_replace(var, "Medea.r", "MEDEA: Rural"))   %>%
-     mutate(var=str_replace(var, "MEDEA: 1", "MEDEA: 1 (least deprived)"))    %>%
-     mutate(var=str_replace(var, "MEDEA: 5", "MEDEA: 5 (most deprived)"))  
+     mutate(var=ifelse(var=="Age.80u", "Age: 80 or older", var)) 
+ 
+ # table<- table %>%
+ #     mutate(var=str_replace_all(var, "[.]g", " group")) %>% 
+ #     mutate(var=str_replace(var, "Medea.u", "MEDEA: ")) %>%
+ #     mutate(var=str_replace(var, "Medea.miss", "MEDEA: Missing"))   %>%
+ #     mutate(var=str_replace(var, "Medea.r", "MEDEA: Rural"))   %>%
+ #     mutate(var=str_replace(var, "MEDEA: 1", "MEDEA: 1 (least deprived)"))    %>%
+ #     mutate(var=str_replace(var, "MEDEA: 5", "MEDEA: 5 (most deprived)"))  
 table<-apply(table, 2,
                      function(x)
                        ifelse(str_sub(x, 1, 8) %in%  c("0 (0.0%)"),
              "<5",x))
 table<-data.frame(table,check.names = FALSE)
 
-   # browser()
+   # 
   table  <-table[,!is.na(table[1,]), drop = F]
   table  <-table[,(table[1,])!="0", drop = F]
   table  <-table[,(table[1,])!="1", drop = F]
@@ -663,9 +669,17 @@ table<-data.frame(table,check.names = FALSE)
   }) 
  
 output$tbl<-  renderDataTable({
-  # validate(need(length(input$CohortProfileDatabaseSelector)>0, 
-  #               "No results for selected inputs"))
+  validate(need(length(input$CohortProfileDatabaseSelector)>0,
+                "No results for selected inputs"))
+    validate(need(length(input$CohortProfileStudyPopulationTypeSelector)>0,
+                "No results for selected inputs"))
+    validate(need(length(input$CohortProfileOutcomeSelector)>0,
+                "No results for selected inputs"))
+  
+  
   table<-get.patient.characteristcis() 
+   validate(need(ncol(table)>1, 
+                "No results for selected inputs"))
   table<-table%>% select_if(~!is.na(.[1L]))
   table<-table[,  which(!table[1,] %in% c("1","2", "3", "4", "5"))]
  
@@ -690,10 +704,10 @@ output$tbl<-  renderDataTable({
     } )
  
 get.inc.summary<-reactive({
-    
+   
   table<-Network.Survival.summary %>% 
   filter(pop %in% input$IncStudyPopulationTypeSelector) %>% 
- filter(pop.type %in% input$IncPopulationSelector) %>% 
+  filter(pop.type %in% input$IncPopulationSelector) %>% 
   filter(prior.obs.required%in% input$IncStudyPopulationSelector)%>% 
   filter(outcome.name %in%  input$IncOutcomeSelector)
   
@@ -709,35 +723,35 @@ get.inc.summary<-reactive({
  table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("overall")) %>%  
-   select(pop, time, "Number at risk", "Events","Cumulative incidence") 
+   select(db, pop, time, "Number at risk", "Events","Cumulative incidence") 
  }
   
       if(input$IncStrataSelector=="Sex"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("gender")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db, pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
       }
   
         if(input$IncStrataSelector=="Condition of interest"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("cond.comp")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
         }
   
           if(input$IncStrataSelector=="Medication of interest"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("drug.comp")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
     }
   
           if(input$IncStrataSelector=="Condition or medication of interest"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("cond.drug.comp")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
     }
   
   
@@ -745,28 +759,28 @@ get.inc.summary<-reactive({
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("age_gr2_gender")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
     }
   
       if(input$IncStrataSelector=="Age group (<=44, 45-64, >=65)"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("age_gr2")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
     }
   
       if(input$IncStrataSelector=="Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85) and sex"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("age_gr_gender")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
       }
   
         if(input$IncStrataSelector=="Age group (30-44, 45-54, 55-64, 65-74, 75-84, >=85)"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("age_gr")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
     }
   
   
@@ -774,21 +788,18 @@ get.inc.summary<-reactive({
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("age_gr3_gender")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
       }
   
         if(input$IncStrataSelector=="Age group (30-39, 40-49, 50-59, 60-69, 70-79, >=80)"){
      table<-table %>% 
    ungroup() %>% 
   filter(strata %in% c("age_gr3")) %>%  
-   select(pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
+   select(db,pop, time, Strata, "Number at risk", "Events","Cumulative incidence") 
     }
-  table[, c("Events")]<- apply(table[, c("Events")], 2,
-               function(x)
-                 ifelse(str_sub(x, 1, 1) %in%  c("1","2","3","4") & nchar(x)==1,
-                         "<5",x))
-  table
+  
 
+  table
   })
   
 output$inc.tbl<- renderDataTable({
@@ -798,8 +809,9 @@ output$inc.tbl<- renderDataTable({
   
    datatable(table
     ,rownames= FALSE,
-    colnames = c('Study population' = 1,
-                 'Days since index date' = 2),
+    colnames = c('Database' = 1,
+                 'Study population' = 2,
+                 'Days since index date' = 3),
      extensions = 'Buttons',
     # options = list(lengthChange = FALSE,
     #                pageLength = 40,
@@ -815,12 +827,13 @@ output$inc.tbl<- renderDataTable({
   } )
     
 get.IR.plot.data<- reactive({
-   # browser() 
+   
  Network.IR  %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
   filter(time.window%in% input$IRsTimeWindowSelector|
              is.na(time.window)) %>%  
   filter(pop %in% input$IRsStudyPopulationTypeSelector) %>% 
- filter(pop.type %in% input$IRsPopulationSelector|
+  filter(pop.type %in% input$IRsPopulationSelector|
              is.na(pop.type)) %>% 
   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
   filter(outcome.name %in%  input$IRsOutcomeSelector)
@@ -828,33 +841,36 @@ get.IR.plot.data<- reactive({
   }) 
 
 output$IR.plot.overall<- renderPlotly({
-    # browser()
+   
 #   validate(
 #   need(input$IRsDatabaseSelector != "", "Please select a database")
 # )
   
+  
 working.data<-get.IR.plot.data() 
-# browser()
-if(input$IRsStrataSelector=="Overall (standardised to General population (index date: 1st December))"){
-    # browser()
 
+if(input$IRsStrataSelector=="Overall (standardised to General population (index date: 1st December))"){
+    
+  # browser()
  # Background.pop
  working.data<-list()
    if(any(input$IRsStudyPopulationTypeSelector=="General population (index date: 1st December)")){
- working.data[["working.data.gpop"]] <- Network.IR  %>% 
+ working.data[["working.data.gpop"]] <- Network.IR  %>%  
+  filter(db %in% input$IRsDatabaseSelector) %>% 
   filter(time.window%in% input$IRsTimeWindowSelector|
              is.na(time.window)) %>%  
   filter(pop=="General population (index date: 1st December)") %>% 
- filter(pop.type %in% input$IRsPopulationSelector|
-             is.na(pop.type)) %>%
+  filter(pop.type %in% input$IRsPopulationSelector|
+             is.na(pop.type)) %>% 
   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
   filter(strata=="overall")
    }
   
-   if(any(input$IRsStudyPopulationTypeSelector=="COVID-19 diagnosis 21d")){#Berta
-   working.data[["working.data.cov21d"]] <- COVID_diagnosis_21d_background.pop.IRS %>% 
-   mutate(pop="COVID-19 diagnosis 21d") %>% 
+   if(any(input$IRsStudyPopulationTypeSelector=="COVID19 positive test 21d")){
+   working.data[["working.data.cov"]] <- COVID_diagnosis_21d_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
+   mutate(pop="COVID-19 positive test (21 days)") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
   filter(target.pop.type %in% input$IRsPopulationSelector|
@@ -866,22 +882,25 @@ if(input$IRsStrataSelector=="Overall (standardised to General population (index 
   rename("ir_100000_upper"="ir_100000_upper.stand") 
    }
  
- if(any(input$IRsStudyPopulationTypeSelector=="COVID-19 diagnosis 90d")){#Berta
-   working.data[["working.data.cov90d"]] <- COVID_diagnosis_90d_background.pop.IRS %>% 
-     mutate(pop="COVID-19 diagnosis 90d") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }
+   if(any(input$IRsStudyPopulationTypeSelector=="COVID19 positive test 90d")){
+   working.data[["working.data.cov"]] <- COVID_diagnosis_90d_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
+   mutate(pop="COVID-19 positive test (90 days)") %>% 
+  filter(target.time.window%in% input$IRsTimeWindowSelector|
+             is.na(target.time.window)) %>%  
+  filter(target.pop.type %in% input$IRsPopulationSelector|
+             is.na(target.pop.type)) %>% 
+  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+  rename("ir_100000"="ir_100000.stand") %>% 
+  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+  rename("ir_100000_upper"="ir_100000_upper.stand") 
+   }
+ 
 if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
  
-   working.data[["working.data.az1"]] <- AZ1_background.pop.IRS %>% 
+   working.data[["working.data.az"]] <- AZ1_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="ChAdOx1 first-dose") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -896,7 +915,8 @@ if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
  
  if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 first-dose (no prior covid)")){
  
-   working.data[["working.data.az1.no.covid"]] <- AZ1.no.covid_background.pop.IRS %>% 
+   working.data[["working.data.az.no.covid"]] <- AZ1.no.covid_background.pop.IRS %>%
+  filter(db %in% input$IRsDatabaseSelector) %>%  
    mutate(pop="ChAdOx1 first-dose (no prior covid)") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -908,39 +928,43 @@ if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
   rename("ir_100000_upper"="ir_100000_upper.stand") 
     }
+
  if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 second-dose")){
-   
+ 
    working.data[["working.data.az2"]] <- AZ2_background.pop.IRS %>% 
-     mutate(pop="ChAdOx1 second-dose") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }
+  filter(db %in% input$IRsDatabaseSelector) %>% 
+   mutate(pop="ChAdOx1 second-dose") %>% 
+  filter(target.time.window%in% input$IRsTimeWindowSelector|
+             is.na(target.time.window)) %>%  
+  filter(target.pop.type %in% input$IRsPopulationSelector|
+             is.na(target.pop.type)) %>% 
+  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+  rename("ir_100000"="ir_100000.stand") %>% 
+  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+  rename("ir_100000_upper"="ir_100000_upper.stand") 
+}
  
  if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 second-dose (no prior covid)")){
-   
-   working.data[["working.data.az2.no.covid"]] <- AZ2.no.covid_background.pop.IRS %>% 
-     mutate(pop="ChAdOx1 second-dose (no prior covid)") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }
  
+   working.data[["working.data.az2.no.covid"]] <- AZ2.no.covid_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
+   mutate(pop="ChAdOx1 second-dose (no prior covid)") %>% 
+  filter(target.time.window%in% input$IRsTimeWindowSelector|
+             is.na(target.time.window)) %>%  
+  filter(target.pop.type %in% input$IRsPopulationSelector|
+             is.na(target.pop.type)) %>% 
+  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+  rename("ir_100000"="ir_100000.stand") %>% 
+  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+  rename("ir_100000_upper"="ir_100000_upper.stand") 
+    }
+
  
 if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
    working.data[["working.data.pf1"]] <- Pf1_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="BNT162b2 first-dose") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -954,7 +978,8 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
 }  
  
  if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose (no prior covid)")){
-   working.data[["working.data.pf1.no.covid"]] <- Pf1.no.covid_background.pop.IRS %>% 
+   working.data[["working.data.pf1.no.covid"]] <- Pf1_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="BNT162b2 first-dose (no prior covid)") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -970,6 +995,7 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
  
  if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 second-dose")){
    working.data[["working.data.pf2"]] <- Pf2_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="BNT162b2 second-dose") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -983,7 +1009,8 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
  }
  
   if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 second-dose (no prior covid)")){
-   working.data[["working.data.pf2.no.covid"]] <- Pf2.no.covid_background.pop.IRS %>% 
+   working.data[["working.data.pf2.no.covid"]] <- Pf2_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="BNT162b2 second-dose (no prior covid)") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -996,164 +1023,11 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
   rename("ir_100000_upper"="ir_100000_upper.stand") 
  }  
 
-
  
-if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 first-dose")){
-   working.data[["working.data.Mod1"]] <- Mod1_background.pop.IRS %>% 
-   mutate(pop="mRNA-1273 first-dose") %>% 
-  filter(target.time.window%in% input$IRsTimeWindowSelector|
-             is.na(target.time.window)) %>%  
-  filter(target.pop.type %in% input$IRsPopulationSelector|
-             is.na(target.pop.type)) %>% 
-  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-  rename("ir_100000"="ir_100000.stand") %>% 
-  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-  rename("ir_100000_upper"="ir_100000_upper.stand") 
-   } 
-
- if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 first-dose (no prior covid)")){
-   working.data[["working.data.Mod1.no.covid"]] <- Mod1.no.covid_background.pop.IRS %>% 
-     mutate(pop="mRNA-1273 first-dose (no prior covid)") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }  
- 
- 
-if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 second-dose")){
-   working.data[["working.data.Mod2"]] <- Mod2_background.pop.IRS %>% 
-   mutate(pop="mRNA-1273 second-dose") %>% 
-  filter(target.time.window%in% input$IRsTimeWindowSelector|
-             is.na(target.time.window)) %>%  
-  filter(target.pop.type %in% input$IRsPopulationSelector|
-             is.na(target.pop.type)) %>% 
-  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-  rename("ir_100000"="ir_100000.stand") %>% 
-  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-  rename("ir_100000_upper"="ir_100000_upper.stand") 
-    } 
- 
- if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 second-dose (no prior covid)")){
-   working.data[["working.data.Mod2.no.covid"]] <- Mod2.no.covid_background.pop.IRS %>% 
-     mutate(pop="mRNA-1273 second-dose (no prior covid)") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }  
- 
- 
- if(any(input$IRsStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
+  if(any(input$IRsStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
    working.data[["working.data.Jnj"]] <- Jnj_background.pop.IRS %>% 
-     mutate(pop="Ad26.COV2.S first-dose") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }
-
- if(any(input$IRsStudyPopulationTypeSelector=="Ad26.COV2.S first-dose (no prior covid)")){
-   working.data[["working.data.Jnj (no prior covid)"]] <- Jnj.no.covid_background.pop.IRS %>% 
-     mutate(pop="Ad26.COV2.S first-dose") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }   
- 
-# if(any(input$IRsStudyPopulationTypeSelector=="Any first-dose")){
- #  working.data[["working.data.any1"]] <- Any1_background.pop.IRS %>% 
- #    mutate(pop="Any first-dose") %>% 
- #    filter(target.time.window%in% input$IRsTimeWindowSelector|
- #             is.na(target.time.window)) %>%  
- #    filter(target.pop.type %in% input$IRsPopulationSelector|
- #             is.na(target.pop.type)) %>% 
- #     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
- #    filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
- #    rename("ir_100000"="ir_100000.stand") %>% 
- #    rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
- #    rename("ir_100000_upper"="ir_100000_upper.stand") 
- #}  
- 
- # if(any(input$IRsStudyPopulationTypeSelector=="Any first-dose (no prior covid)")){
- #  working.data[["working.data.any1.no.covid"]] <- Any1.no.covid_background.pop.IRS %>% 
- #    mutate(pop="Any first-dose (no prior covid)") %>% 
- #     filter(target.time.window%in% input$IRsTimeWindowSelector|
- #              is.na(target.time.window)) %>%  
- #    filter(target.pop.type %in% input$IRsPopulationSelector|
- #             is.na(target.pop.type)) %>% 
- #     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
- #     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
- #    rename("ir_100000"="ir_100000.stand") %>% 
- #    rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
- #    rename("ir_100000_upper"="ir_100000_upper.stand") 
- #}  
- 
-
- working.data<-bind_rows(working.data)
- 
-  validate(
-  need(!is.null(nrow(working.data)), "No results for selected inputs")
-) 
-  validate(
-  need(nrow(working.data)>0, "No results for selected inputs")
-)
- 
-  plot<-  working.data %>% 
-  ggplot(aes(pop,ir_100000, ymin=ir_100000_lower,ymax=ir_100000_upper,
-             text =paste0(outcome.name,
-                          "\n", pop,
-                          "\nSIR: ", round(ir_100000,1),
-                          " (", round(ir_100000_lower,1),
-                          " to ",round(ir_100000_upper,1), ")"
-                          )))+
-    xlab("Study population")+
-    ylab("Standardised IR per 100,000 PYs\n")
-}
-
-if(input$IRsStrataSelector=="Overall (standardised to General population (index date: first visit/ contact))"){
-    # browser()
-
- # Background.pop
- working.data<-list()
-   if(any(input$IRsStudyPopulationTypeSelector=="General population (index date: 1st December)")){
- working.data[["working.data.gpop"]] <- Network.IR  %>% 
-  filter(time.window%in% input$IRsTimeWindowSelector|
-             is.na(time.window)) %>%  
-  filter(pop=="General population (index date: first visit/ contact)") %>% 
-  filter(pop.type %in% input$IRsPopulationSelector|
-             is.na(pop.type)) %>% 
-  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-  filter(strata=="overall")
-   }
-  
-  if(any(input$IRsStudyPopulationTypeSelector=="COVID-19 diagnosis 21d")){# Berta
-   working.data[["working.data.cov21d"]] <- COVID_diagnosis_21d_background.pop.visit.IRS %>% 
-   mutate(pop="COVID-19 diagnosis 21d") %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
+   mutate(pop="Ad26.COV2.S first-dose") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
   filter(target.pop.type %in% input$IRsPopulationSelector|
@@ -1163,80 +1037,11 @@ if(input$IRsStrataSelector=="Overall (standardised to General population (index 
   rename("ir_100000"="ir_100000.stand") %>% 
   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
   rename("ir_100000_upper"="ir_100000_upper.stand") 
-   }
- 
-  if(any(input$IRsStudyPopulationTypeSelector=="COVID-19 diagnosis 90d")){# Berta
-   working.data[["working.data.cov90d"]] <- COVID_diagnosis_90d_background.pop.visit.IRS %>% 
-     mutate(pop="COVID-19 diagnosis 90d") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }
-if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
- 
-   working.data[["working.data.az1"]] <- AZ1_background.pop.visit.IRS %>% 
-   mutate(pop="ChAdOx1 first-dose") %>% 
-  filter(target.time.window%in% input$IRsTimeWindowSelector|
-             is.na(target.time.window)) %>%  
-  filter(target.pop.type %in% input$IRsPopulationSelector|
-             is.na(target.pop.type)) %>% 
-  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-  rename("ir_100000"="ir_100000.stand") %>% 
-  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-  rename("ir_100000_upper"="ir_100000_upper.stand") 
-    }
- if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 second-dose")){
-   
-   working.data[["working.data.az2"]] <- AZ2_background.pop.visit.IRS %>% 
-     mutate(pop="ChAdOx1 second-dose") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }
- 
-if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
-   working.data[["working.data.pf1"]] <- Pf1_background.pop.visit.IRS %>% 
-   mutate(pop="BNT162b2 first-dose") %>% 
-  filter(target.time.window%in% input$IRsTimeWindowSelector|
-             is.na(target.time.window)) %>%  
-  filter(target.pop.type %in% input$IRsPopulationSelector|
-             is.na(target.pop.type)) %>% 
-  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-  rename("ir_100000"="ir_100000.stand") %>% 
-  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-  rename("ir_100000_upper"="ir_100000_upper.stand") 
-      }  
- 
- if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 second-dose")){
-   working.data[["working.data.pf2"]] <- Pf2_background.pop.visit.IRS %>% 
-   mutate(pop="BNT162b2 second-dose") %>% 
-  filter(target.time.window%in% input$IRsTimeWindowSelector|
-             is.na(target.time.window)) %>%  
-  filter(target.pop.type %in% input$IRsPopulationSelector|
-             is.na(target.pop.type)) %>% 
-  filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-  filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-  rename("ir_100000"="ir_100000.stand") %>% 
-  rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-  rename("ir_100000_upper"="ir_100000_upper.stand") 
- }  
+  }  
  
    if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 first-dose")){
-   working.data[["working.data.Mod1"]] <- Mod1_background.pop.visit.IRS %>% 
+   working.data[["working.data.Mod1"]] <- Mod1_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="mRNA-1273 first-dose") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -1250,7 +1055,8 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
       } 
 
     if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 second-dose")){
-   working.data[["working.data.Mod2"]] <- Mod2_background.pop.visit.IRS %>% 
+   working.data[["working.data.Mod2"]] <- Mod2_background.pop.IRS %>% 
+  filter(db %in% input$IRsDatabaseSelector) %>% 
    mutate(pop="mRNA-1273 second-dose") %>% 
   filter(target.time.window%in% input$IRsTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -1261,37 +1067,7 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
   rename("ir_100000"="ir_100000.stand") %>% 
   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
   rename("ir_100000_upper"="ir_100000_upper.stand") 
-    } 
-
- if(any(input$IRsStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
-   working.data[["working.data.Jnj"]] <- Jnj_background.pop.visit.IRS %>% 
-     mutate(pop="Ad26.COV2.S first-dose") %>% 
-     filter(target.time.window%in% input$IRsTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRsPopulationSelector|
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand") 
- }  
- 
- # if(any(input$IRsStudyPopulationTypeSelector=="Any first-dose")){
- #   working.data[["working.data.any1"]] <- Any1_background.pop.visit.IRS %>% 
- #     mutate(pop="Any first-dose") %>% 
- #filter(target.time.window%in% input$IRsTimeWindowSelector|
- ##              is.na(target.time.window)) %>%  
- #     filter(target.pop.type %in% input$IRsPopulationSelector|
- #              is.na(target.pop.type)) %>% 
- #     filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
- #     filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
- #     rename("ir_100000"="ir_100000.stand") %>% 
- #     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
- #     rename("ir_100000_upper"="ir_100000_upper.stand") 
- # }  
- 
- 
+      } 
  
  working.data<-bind_rows(working.data)
  
@@ -1314,10 +1090,147 @@ if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
     ylab("Standardised IR per 100,000 PYs\n")
 }
 
+# if(input$IRsStrataSelector=="Overall (standardised to General population (index date: first visit/ contact))"){
+#     # browser()
+# 
+#  # Background.pop
+#  working.data<-list()
+#    if(any(input$IRsStudyPopulationTypeSelector=="General population (index date: 1st December)")){
+#  working.data[["working.data.gpop"]] <- Network.IR  %>% 
+#   filter(time.window%in% input$IRsTimeWindowSelector|
+#              is.na(time.window)) %>%  
+#   filter(pop=="General population (index date: first visit/ contact)") %>% 
+#   filter(pop.type %in% input$IRsPopulationSelector|
+#              is.na(pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   filter(strata=="overall")
+#    }
+#   
+#    if(any(input$IRsStudyPopulationTypeSelector=="COVID-19 diagnosis")){
+#    working.data[["working.data.cov"]] <- COVID_diagnosis_background.pop.visit.IRS %>% 
+#    mutate(pop="COVID-19 diagnosis") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#    }
+# 
+# if(any(input$IRsStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
+#  
+#    working.data[["working.data.az"]] <- AZ_background.pop.visit.IRS %>% 
+#    mutate(pop="ChAdOx1 first-dose") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#     }
+#  
+# if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 first-dose")){
+#    working.data[["working.data.pf1"]] <- Pf1_background.pop.visit.IRS %>% 
+#    mutate(pop="BNT162b2 first-dose") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#       }  
+#  
+#  if(any(input$IRsStudyPopulationTypeSelector=="BNT162b2 second-dose")){
+#    working.data[["working.data.pf2"]] <- Pf2_background.pop.visit.IRS %>% 
+#    mutate(pop="BNT162b2 second-dose") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#  }  
+#  
+#   if(any(input$IRsStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
+#    working.data[["working.data.Jnj"]] <- Jnj_background.pop.visit.IRS %>% 
+#    mutate(pop="Ad26.COV2.S first-dose") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#   }  
+#  
+#    if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 first-dose")){
+#    working.data[["working.data.Mod1"]] <- Mod1_background.pop.visit.IRS %>% 
+#    mutate(pop="mRNA-1273 first-dose") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#       } 
+# 
+#     if(any(input$IRsStudyPopulationTypeSelector=="mRNA-1273 second-dose")){
+#    working.data[["working.data.Mod2"]] <- Mod2_background.pop.visit.IRS %>% 
+#    mutate(pop="mRNA-1273 second-dose") %>% 
+#   filter(target.time.window%in% input$IRsTimeWindowSelector|
+#              is.na(target.time.window)) %>%  
+#   filter(target.pop.type %in% input$IRsPopulationSelector|
+#              is.na(target.pop.type)) %>% 
+#   filter(prior.obs.required%in% input$IRsStudyPopulationSelector)%>% 
+#   filter(outcome.name %in%  input$IRsOutcomeSelector) %>% 
+#   rename("ir_100000"="ir_100000.stand") %>% 
+#   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
+#   rename("ir_100000_upper"="ir_100000_upper.stand") 
+#       } 
+#  
+#  working.data<-bind_rows(working.data)
+#  
+#   validate(
+#   need(!is.null(nrow(working.data)), "No results for selected inputs")
+# ) 
+#   validate(
+#   need(nrow(working.data)>0, "No results for selected inputs")
+# )
+#  
+#   plot<-  working.data %>% 
+#   ggplot(aes(pop,ir_100000, ymin=ir_100000_lower,ymax=ir_100000_upper,
+#              text =paste0(outcome.name,
+#                           "\n", pop,
+#                           "\nSIR: ", round(ir_100000,1),
+#                           " (", round(ir_100000_lower,1),
+#                           " to ",round(ir_100000_upper,1), ")"
+#                           )))+
+#     xlab("Study population")+
+#     ylab("Standardised IR per 100,000 PYs\n")
+# }
+
 
 
 if(input$IRsStrataSelector=="Overall"){
- working.data<-working.data %>% 
+   working.data<-working.data %>% 
   filter(strata %in% c("overall"))
  
   validate(
@@ -1795,30 +1708,24 @@ plot<-plot+
   scale_y_continuous(label=label_comma(accuracy= 1), 
                     limits=c(0,NA) )} 
 
-# browser()
   ggplotly(plot +
   geom_errorbar(position=position_dodge(width=0.5), width=0,)+     
   theme_bw()+
    scale_color_manual(values=c("ChAdOx1 first-dose" = "#e41a1c",
                                "ChAdOx1 first-dose (no prior covid)" = "#e41a1c",
-                               "ChAdOx1 second-dose" = "#960e0f",
-                               "ChAdOx1 second-dose (no prior covid)" = "#960e0f",
-                                "BNT162b2 first-dose" = "blue",
-                                "BNT162b2 first-dose (no prior covid)" = "blue",
-                                "BNT162b2 second-dose" = "#377eb8",
-                                "BNT162b2 second-dose (no prior covid)" = "#377eb8",
-                               "mRNA-1273 first-dose" ="#16752e",
-                               "mRNA-1273 first-dose (no prior covid)" ="#16752e",
-                               "mRNA-1273 second-dose"=  "#3bad58",
-                               "mRNA-1273 second-dose (no prior covid)"=  "#3bad58",
-                               "Ad26.COV2.S first-dose"="#691740",
-                               "General population (index date: 1st December)" = "#4daf4a",
+                                 "BNT162b2 first-dose" = "blue",
+                                 "BNT162b2 first-dose (no prior covid)" = "blue",
+                                 "BNT162b2 second-dose" = "#377eb8",
+                                 "BNT162b2 second-dose (no prior covid)" = "#377eb8",
+                               "Ad26.COV2.S first-dose" = "black",
+                               "Ad26.COV2.S first-dose (no prior covid)"   = "black",
+                               "mRNA-1273 first-dose" = "grey",
+                               "mRNA-1273 first-dose (no prior covid)" = "grey",
+                               "mRNA-1273 second-dose" = "grey",
+                               "mRNA-1273 second-dose (no prior covid)" = "grey",
                                "General population (index date: 1st December)" = "#252525",
-                               "COVID-19 diagnosis 21d"="#ff7f00",
-                               "COVID-19 diagnosis 90d"="#ffbb00"#,
-                               # "Any first-dose" = "#42c728",
-                               #  "Any first-dose (no prior covid)" ="#42c728"
-                                ))+
+                               "COVID-19 positive test (21 days)"="#ff7f00",
+                               "COVID-19 positive test (90 days)"="orange"))+
   theme(legend.title = element_blank(),
         axis.text=element_text(size=12),
         axis.title=element_text(size=12,face="bold"),
@@ -1851,29 +1758,23 @@ plot<-plot+
     })
 
 get.tbl.IRR<-reactive({
- # browser()
+  # browser()
   table.data<-bind_rows(
-    COVID_diagnosis_21d_background.pop.IRR,
-    COVID_diagnosis_90d_background.pop.IRR,
-    # COVID_diagnosis_background.pop.visit.IRR ,
-               Pf1_background.pop.IRR, 
-               Pf1.no.covid_background.pop.IRR, 
-               # Pf1_background.pop.visit.IRR,
-               Pf2_background.pop.IRR, 
-               Pf2.no.covid_background.pop.IRR, 
-               # Pf2_background.pop.visit.IRR,
-               AZ1_background.pop.IRR,
-               AZ1.no.covid_background.pop.IRR,
-               # AZ_background.pop.visit.IRR
-    #Any1_background.pop.IRR,
-    # Any1.no.covid_background.pop.IRR
-               
-               # Jnj_background.pop.IRR,
-               # # Jnj_background.pop.visit.IRR,
-               # Mod1_background.pop.IRR, 
-               # Mod1_background.pop.visit.IRR,
-               # Mod2_background.pop.IRR, 
-               # Mod2_background.pop.visit.IRR,
+    COVID_diagnosis_21d_background.pop.IRR.all,
+    COVID_diagnosis_90d_background.pop.IRR.all ,
+    Pf1_background.pop.IRR, 
+    Pf1.no.covid_background.pop.IRR, 
+    Pf2_background.pop.IRR, 
+    Pf2.no.covid_background.pop.IRR,
+    AZ1_background.pop.IRR,
+    AZ1.no.covid_background.pop.IRR,
+    AZ2_background.pop.IRR,
+    AZ2.no.covid_background.pop.IRR,
+    Jnj_background.pop.IRR,
+    Jnj.no.covid_background.pop.IRR,
+    Mod1_background.pop.IRR, 
+    Mod1.no.covid_background.pop.IRR, 
+    Mod2_background.pop.IRR
               ) %>% 
     filter(target.pop %in% input$IRRTargetStudyPopulationTypeSelector) %>% 
     filter(comparator %in% input$IRRComparatorStudyPopulationTypeSelector)
@@ -2040,9 +1941,13 @@ output$IRR.plot.overall<- renderPlotly({
  
 
  
-  plot.data<-get.tbl.IRR()
+  plot.data<-get.tbl.IRR() %>% 
+  filter(db%in% input$IRRDatabaseSelector) %>% 
+    mutate(target.pop=ifelse(target.pop=="COVID19 positive test 21d",
+                             "COVID-19 positive test (21 days)",target.pop )) %>% 
+    mutate(target.pop=ifelse(target.pop=="COVID19 positive test 90d",
+                             "COVID-19 positive test (90 days)", target.pop))
   
-  #
 
  
   if(input$IRRStrataSelector=="Overall (standardised)"){
@@ -2052,33 +1957,34 @@ output$IRR.plot.overall<- renderPlotly({
   
       
 if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index date: 1st December)"){  
-   if(any(input$IRRTargetStudyPopulationTypeSelector=="COVID-19 diagnosis 21d")){
-   working.data[["working.data.cov21d"]] <-COVID_diagnosis_21d_background.pop.IRS%>%
-   mutate(pop="COVID-19 diagnosis 21d")
+   if(any(input$IRRTargetStudyPopulationTypeSelector=="COVID19 positive test 21d")){
+   working.data[["working.data.cov.21"]] <-COVID_diagnosis_21d_background.pop.IRS%>%
+   mutate(pop="COVID-19 positive test (21 days)")
    }
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="COVID-19 diagnosis 90d")){
-    working.data[["working.data.cov90d"]] <-COVID_diagnosis_90d_background.pop.IRS%>%
-      mutate(pop="COVID-19 diagnosis 90d")
-  }
+   if(any(input$IRRTargetStudyPopulationTypeSelector=="COVID19 positive test 90d")){
+   working.data[["working.data.cov.90"]] <-COVID_diagnosis_90d_background.pop.IRS%>%
+   mutate(pop="COVID-19 positive test (90 days)")
+   }
     if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
-   working.data[["working.data.az1"]] <-AZ1_background.pop.IRS %>%
+   working.data[["working.data.az"]] <-AZ1_background.pop.IRS %>%
    mutate(pop="ChAdOx1 first-dose")
     }
   
       if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 first-dose (no prior covid)")){
-   working.data[["working.data.az1.no.covid"]] <-AZ1.no.covid_background.pop.IRS %>%
+   working.data[["working.data.az.no.covid"]] <-AZ1.no.covid_background.pop.IRS %>%
    mutate(pop="ChAdOx1 first-dose (no prior covid)")
+      }
+  
+      if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 second-dose")){
+   working.data[["working.data.az2"]] <-AZ2_background.pop.IRS %>%
+   mutate(pop="ChAdOx1 second-dose")
     }
   
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 second-dose")){
-    working.data[["working.data.az2"]] <-AZ2_background.pop.IRS %>%
-      mutate(pop="ChAdOx1 second-dose")
-  }
-  
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 second-dose (no prior covid)")){
-    working.data[["working.data.az2.no.covid"]] <-AZ1.no.covid_background.pop.IRS %>%
-      mutate(pop="ChAdOx1 second-dose (no prior covid)")
-  }
+      if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 second-dose (no prior covid)")){
+   working.data[["working.data.az2.no.covid"]] <-AZ2.no.covid_background.pop.IRS %>%
+   mutate(pop="ChAdOx1 second-dose (no prior covid)")
+    }
+    
          if(any(input$IRRTargetStudyPopulationTypeSelector=="BNT162b2 first-dose")){
    working.data[["working.data.pf1"]] <-Pf1_background.pop.IRS %>% 
    mutate(pop="BNT162b2 first-dose")
@@ -2103,112 +2009,38 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
    working.data[["working.data.Mod1"]] <-Mod1_background.pop.IRS %>% 
    mutate(pop="mRNA-1273 first-dose")
                }
-  
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="mRNA-1273 first-dose (no prior covid)")){
-    working.data[["working.data.Mod1.no.covid"]] <-Mod1.no.covid_background.pop.IRS %>% 
-      mutate(pop="mRNA-1273 first-dose (no prior covid)")
-  }
+                 if(any(input$IRRTargetStudyPopulationTypeSelector=="mRNA-1273 first-dose (no prior covid)")){
+   working.data[["working.data.Mod1.no.covid"]] <-Mod1_background.pop.IRS %>% 
+   mutate(pop="mRNA-1273 first-dose (no prior covid)")
+         }
       
                if(any(input$IRRTargetStudyPopulationTypeSelector=="mRNA-1273 second-dose")){
    working.data[["working.data.Mod2"]] <-Mod2_background.pop.IRS %>% 
    mutate(pop="mRNA-1273 second-dose")
                }
-  
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="mRNA-1273 second-dose (no prior covid)")){
-    working.data[["working.data.Mod2.no.covid"]] <-Mod2.no.covid_background.pop.IRS %>% 
-      mutate(pop="mRNA-1273 second-dose (no prior covid)")
-  }
-  
+      
                      if(any(input$IRRTargetStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
    working.data[["working.data.jnj"]] <-Jnj_background.pop.IRS %>% 
    mutate(pop="Ad26.COV2.S first-dose")
          }
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="Ad26.COV2.S first-dose (no prior covid)")){
-    working.data[["working.data.jnj.no.covid"]] <-Jnj.no.covid_background.pop.IRS %>% 
-      mutate(pop="Ad26.COV2.S first-dose (no prior covid)")
-  }
-  
-  
-  # if(any(input$IRRTargetStudyPopulationTypeSelector=="Any first-dose")){
-  #   working.data[["working.data.any1"]] <-Any1_background.pop.IRS %>% 
-  #    mutate(pop="Any first-dose")
-  # }
-  
-  # if(any(input$IRRTargetStudyPopulationTypeSelector=="Any first-dose (no prior covid)")){
-  #    working.data[["working.data.any1.no.covid"]] <-Any1.no.covid_background.pop.IRS %>% 
-  #      mutate(pop="Any first-dose (no prior covid)")
-  #  }
-  
-
-  
-  
-  
-  
-  
+                       if(any(input$IRRTargetStudyPopulationTypeSelector=="Ad26.COV2.S first-dose (no prior covid)")){
+   working.data[["working.data.jnj.no.covid"]] <-Jnj_background.pop.IRS %>% 
+   mutate(pop="Ad26.COV2.S first-dose (no prior covid)")
+         }   
+      
     }   
  
-if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index date: first visit/ contact)"){  
-   if(any(input$IRRTargetStudyPopulationTypeSelector=="COVID-19 diagnosis 21d")){
-   working.data[["working.data.cov21d"]] <-COVID_diagnosis_21d_background.pop.visit.IRS%>%
-   mutate(pop="COVID-19 diagnosis 21d")
-   }
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="COVID-19 diagnosis 90d")){
-    working.data[["working.data.cov90d"]] <-COVID_diagnosis_90d_background.pop.visit.IRS%>%
-      mutate(pop="COVID-19 diagnosis 90d")
-  }
-    if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
-   working.data[["working.data.az1"]] <-AZ1_background.pop.visit.IRS %>%
-   mutate(pop="ChAdOx1 first-dose")
-    }
-  if(any(input$IRRTargetStudyPopulationTypeSelector=="ChAdOx1 second-dose")){
-    working.data[["working.data.az2"]] <-AZ2_background.pop.visit.IRS %>%
-      mutate(pop="ChAdOx1 second-dose")
-  }
-         if(any(input$IRRTargetStudyPopulationTypeSelector=="BNT162b2 first-dose")){
-   working.data[["working.data.pf1"]] <-Pf1_background.pop.visit.IRS %>% 
-   mutate(pop="BNT162b2 first-dose")
-         }
-      
-               if(any(input$IRRTargetStudyPopulationTypeSelector=="BNT162b2 second-dose")){
-   working.data[["working.data.pf2"]] <-Pf2_background.pop.visit.IRS %>% 
-   mutate(pop="BNT162b2 second-dose")
-               }
-      
-               if(any(input$IRRTargetStudyPopulationTypeSelector=="mRNA-1273 first-dose")){
-   working.data[["working.data.Mod1"]] <-Mod1_background.pop.visit.IRS %>% 
-   mutate(pop="mRNA-1273 first-dose")
-         }
-      
-               if(any(input$IRRTargetStudyPopulationTypeSelector=="mRNA-1273 second-dose")){
-   working.data[["working.data.Mod2"]] <-Mod2_background.pop.visit.IRS %>% 
-   mutate(pop="mRNA-1273 second-dose")
-               }
-      
-                     if(any(input$IRRTargetStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
-   working.data[["working.data.jnj"]] <-Jnj_background.pop.visit.IRS %>% 
-   mutate(pop="Ad26.COV2.S first-dose")
-         }
-      
-  #  if(any(input$IRRTargetStudyPopulationTypeSelector=="Any first-dose")){
-  #    working.data[["working.data.any1"]] <-Any1_background.pop.visit.IRS %>% 
-  #      mutate(pop="Any first-dose")
-  #  }
-  
-    }   
-      
-           
-      
-
-      
- plot.data<-bind_rows(working.data) %>% 
+ plot.data<-bind_rows(working.data)%>% 
+  filter(db%in% input$IRRDatabaseSelector) %>% 
   filter(target.time.window%in% input$IRRTimeWindowSelector) %>%
   filter(target.pop.type %in% input$IRRPopulationSelector) %>%
   filter(prior.obs.required%in% input$IRRStudyPopulationSelector)%>%
   filter(outcome.name %in%  input$IRROutcomeSelector) 
    
+ # browser()
      plot <-  plot.data %>% 
-  ggplot(aes(group=pop, 
-                 colour=pop,
+  ggplot(aes(group=paste0(pop,db), 
+                 colour=pop,shape=db,
              text =paste0(outcome.name,
                           "\n", pop,
                           "\nSIR: ", nice.num2(isr.sir),
@@ -2237,7 +2069,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
     
   if(input$IRRStrataSelector=="overall" ){
  plot <-  plot.data%>% 
-  ggplot(aes(group=target.pop, 
+  ggplot(aes(group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2268,7 +2100,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
          
  plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",gender),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2308,7 +2140,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
          
  plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",cond.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2348,7 +2180,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
          
  plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2388,7 +2220,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
          
  plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",cond.drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2421,7 +2253,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2456,7 +2288,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr2),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2490,7 +2322,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr3),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2527,7 +2359,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr,"; ",gender),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2564,7 +2396,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr2,"; ",gender),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2601,7 +2433,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr3,"; ",gender),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2627,18 +2459,8 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
                                  "BNT162b2 first-dose (no prior covid)" = "blue",
                                  "BNT162b2 second-dose" = "#377eb8",
                                  "BNT162b2 second-dose (no prior covid)" = "#377eb8",
-                               "mRNA-1273 first-dose" ="#16752e",
-                               "mRNA-1273 first-dose (no prior covid)" ="#16752e",
-                               "mRNA-1273 second-dose"=  "#3bad58",
-                               "mRNA-1273 second-dose (no prior covid)"=  "#3bad58",
-                               "Ad26.COV2.S first-dose"="#691740",
-                               "Ad26.COV2.S first-dose (no prior covid)"="#691740",
                                "General population (index date: 1st December)" = "#252525",
-                               "COVID-19 diagnosis 21d"="#ff7f00",
-                               "COVID-19 diagnosis 90d"="#ffbb00",
-                              # "Any first-dose" = "#42c728",
-                              # "Any first-dose (no prior covid)" = "#42c728"
-                               ))+
+                               "COVID-19 positive test (90 days)"="#ff7f00"))+
     ylab("Incidence rate ratio")
      
      
@@ -2663,7 +2485,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr2,"; ",gender, "; ",plot.data$cond.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2704,7 +2526,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr,"; ",gender, "; ",plot.data$cond.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2746,7 +2568,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr3,"; ",gender, "; ",plot.data$cond.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2788,7 +2610,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr2,"; ",gender, "; ",plot.data$drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2830,7 +2652,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr,"; ",gender, "; ",plot.data$drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2872,7 +2694,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr3,"; ",gender, "; ",plot.data$drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2914,7 +2736,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr2,"; ",gender, "; ",plot.data$cond.drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2956,7 +2778,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr,"; ",gender, "; ",plot.data$cond.drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -2998,7 +2820,7 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
 
      plot <-  plot.data%>% 
   ggplot(aes(x=paste0(outcome.name,"; ",age_gr3,"; ",gender, "; ",plot.data$cond.drug.comp),
-             group=target.pop, 
+            group=paste0(target.pop,db), shape=db,
                  colour=target.pop,
              text =paste0(outcome.name,
                            "\n", target.pop,
@@ -3045,24 +2867,19 @@ if(input$IRRComparatorStudyPopulationTypeSelector=="General population (index da
   theme_bw()+
    scale_color_manual(values=c("ChAdOx1 first-dose" = "#e41a1c",
                                "ChAdOx1 first-dose (no prior covid)" = "#e41a1c",
-                               "ChAdOx1 second-dose" = "#960e0f",
-                               "ChAdOx1 second-dose (no prior covid)" = "#960e0f",
                                  "BNT162b2 first-dose" = "blue",
                                  "BNT162b2 first-dose (no prior covid)" = "blue",
                                  "BNT162b2 second-dose" = "#377eb8",
                                  "BNT162b2 second-dose (no prior covid)" = "#377eb8",
-                               "mRNA-1273 first-dose" ="#16752e",
-                               "mRNA-1273 first-dose (no prior covid)" ="#16752e",
-                               "mRNA-1273 second-dose"=  "#3bad58",
-                               "mRNA-1273 second-dose (no prior covid)"=  "#3bad58",
-                               "Ad26.COV2.S first-dose"="#691740",
-                               "Ad26.COV2.S first-dose (no prior covid)"="#691740",
+                               "Ad26.COV2.S first-dose" = "black",
+                               "Ad26.COV2.S first-dose (no prior covid)"   = "black",
+                               "mRNA-1273 first-dose" = "grey",
+                               "mRNA-1273 first-dose (no prior covid)" = "grey",
+                               "mRNA-1273 second-dose" = "grey",
+                               "mRNA-1273 second-dose (no prior covid)" = "grey",
                                "General population (index date: 1st December)" = "#252525",
-                               "COVID-19 diagnosis 21d"="#ff7f00",
-                               "COVID-19 diagnosis 90d"="#ffbb00"#,
-                              # "Any first-dose"="#42c738",
-                             #  "Any first-dose (no prior covid)"="#42c728"
-                               ))+
+                               "COVID-19 positive test (21 days)"="#ff7f00",
+                               "COVID-19 positive test (90 days)"="orange"))+
   theme(legend.title = element_blank(),
         axis.text=element_text(size=12),
         axis.title.y=element_text(size=12,face="bold"),
@@ -3107,23 +2924,9 @@ get.tbl.IRS<-reactive({
   # Background.pop
  working.data<-list()
 
- 
- if(any(input$IRSTargetStudyPopulationTypeSelector=="COVID19 positive test 21d")){
-   working.data[["working.data.cov21d"]] <- COVID_diagnosis_21d_background.pop.IRS %>% 
-     mutate(pop="COVID-19 diagnosis 21d") %>% 
-     filter(target.time.window%in% input$IRSTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRSPopulationSelector |
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRSStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRSOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand")  }
- 
- if(any(input$IRSTargetStudyPopulationTypeSelector=="COVID19 positive test 90d")){
-   working.data[["working.data.cov90d"]] <- COVID_diagnosis_90d_background.pop.IRS %>% 
-   mutate(pop="COVID-19 diagnosis 90d") %>% 
+  if(any(input$IRSTargetStudyPopulationTypeSelector=="COVID-19 diagnosis")){
+   working.data[["working.data.cov"]] <- COVID_diagnosis_background.pop.IRS %>% 
+   mutate(pop="COVID-19 diagnosis") %>% 
   filter(target.time.window%in% input$IRSTimeWindowSelector|
              is.na(target.time.window)) %>%  
   filter(target.pop.type %in% input$IRSPopulationSelector |
@@ -3133,11 +2936,10 @@ get.tbl.IRS<-reactive({
   rename("ir_100000"="ir_100000.stand") %>% 
   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
   rename("ir_100000_upper"="ir_100000_upper.stand")  }
-
  
 if(any(input$IRSTargetStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
 
-   working.data[["working.data.az1"]] <- AZ1_background.pop.IRS %>%
+   working.data[["working.data.az"]] <- AZ1_background.pop.IRS %>%
    mutate(pop="ChAdOx1 first-dose") %>%
   filter(target.time.window%in% input$IRSTimeWindowSelector|
              is.na(target.time.window)) %>%  
@@ -3150,22 +2952,6 @@ if(any(input$IRSTargetStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
   rename("ir_100000_upper"="ir_100000_upper.stand")  
     }
 
- 
- if(any(input$IRSTargetStudyPopulationTypeSelector=="ChAdOx1 second-dose")){
-   
-   working.data[["working.data.az2"]] <- AZ2_background.pop.IRS %>%
-     mutate(pop="ChAdOx1 second-dose") %>%
-     filter(target.time.window%in% input$IRSTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRSPopulationSelector |
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRSStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRSOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand")  
- }
- 
       if(any(input$IRSTargetStudyPopulationTypeSelector=="BNT162b2 first-dose")){
           working.data[["working.data.pf"]] <- Pf1_background.pop.IRS %>%
    mutate(pop="BNT162b2 first-dose") %>%
@@ -3194,50 +2980,6 @@ if(any(input$IRSTargetStudyPopulationTypeSelector=="ChAdOx1 first-dose")){
   rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
   rename("ir_100000_upper"="ir_100000_upper.stand")  
       }
- 
- if(any(input$IRSTargetStudyPopulationTypeSelector=="mRNA-1273 first-dose")){
-   working.data[["working.data.Mod1"]] <- Mod1_background.pop.IRS %>%
-     mutate(pop="mRNA11-1273 first-dose") %>%
-     filter(target.time.window%in% input$IRSTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRSPopulationSelector |
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRSStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRSOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand")  
- }
- 
- if(any(input$IRSTargetStudyPopulationTypeSelector=="mRNA-1273 second-dose")){
-   #   browser()
-   working.data[["working.data.Mod2"]] <- Mod2_background.pop.IRS %>%
-     mutate(pop="mRNA-1273 second-dose") %>%
-     filter(target.time.window%in% input$IRSTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRSPopulationSelector |
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRSStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRSOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand")  
- }
- 
- 
- if(any(input$IRSTargetStudyPopulationTypeSelector=="Ad26.COV2.S first-dose")){
-   working.data[["working.data.Jnj"]] <- Jnj_background.pop.IRS %>%
-     mutate(pop="Ad26.COV2.S first-dose") %>%
-     filter(target.time.window%in% input$IRSTimeWindowSelector|
-              is.na(target.time.window)) %>%  
-     filter(target.pop.type %in% input$IRSPopulationSelector |
-              is.na(target.pop.type)) %>% 
-     filter(prior.obs.required%in% input$IRSStudyPopulationSelector)%>% 
-     filter(outcome.name %in%  input$IRSOutcomeSelector) %>% 
-     rename("ir_100000"="ir_100000.stand") %>% 
-     rename("ir_100000_lower"="ir_100000_lower.stand") %>% 
-     rename("ir_100000_upper"="ir_100000_upper.stand")  
- }
  
  working.data<-bind_rows(working.data)
  table.data<-working.data
@@ -3577,24 +3319,19 @@ output$IRS.plot.overall<- renderPlotly({
   theme_bw()+
    scale_color_manual(values=c("ChAdOx1 first-dose" = "#e41a1c",
                                "ChAdOx1 first-dose (no prior covid)" = "#e41a1c",
-                               "ChAdOx1 second-dose" = "#960e0f",
-                               "ChAdOx1 second-dose (no prior covid)" = "#960e0f",
                                  "BNT162b2 first-dose" = "blue",
                                  "BNT162b2 first-dose (no prior covid)" = "blue",
                                  "BNT162b2 second-dose" = "#377eb8",
                                  "BNT162b2 second-dose (no prior covid)" = "#377eb8",
-                               "mRNA-1273 first-dose" ="#16752e",
-                               "mRNA-1273 first-dose (no prior covid)" ="#16752e",
-                               "mRNA-1273 second-dose"=  "#3bad58",
-                               "mRNA-1273 second-dose (no prior covid)"=  "#3bad58",
-                               "Ad26.COV2.S first-dose"="#691740",
-                               "Ad26.COV2.S first-dose (no prior covid)"="#691740",
+                               "Ad26.COV2.S first-dose" = "black",
+                               "Ad26.COV2.S first-dose (no prior covid)"   = "black",
+                               "mRNA-1273 first-dose" = "grey",
+                               "mRNA-1273 first-dose (no prior covid)" = "grey",
+                               "mRNA-1273 second-dose" = "grey",
+                               "mRNA-1273 second-dose (no prior covid)" = "grey",
                                "General population (index date: 1st December)" = "#252525",
-                               "COVID-19 diagnosis 21d"="#ff7f00",
-                               "COVID-19 diagnosis 90d"="#ffbb00"#,
-                               #"Any first-dose" == "#42c728",
-                              # "Any first-dose (no prior covid)" == "#42c728" 
-                               ))+
+                               "COVID-19 positive test (21 days)"="#ff7f00",
+                               "COVID-19 positive test (90 days)"="orange"))+
   theme(legend.title = element_blank(),
         axis.text=element_text(size=12),
         axis.title.y=element_text(size=12,face="bold"),

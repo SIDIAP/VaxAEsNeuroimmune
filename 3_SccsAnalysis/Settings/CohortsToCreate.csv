@@ -1,0 +1,27 @@
+atlasId,atlasName,cohortId,name,type
+101,BellsPalsy,101,BellsPalsy,outcome
+102,Encephalomyelitis,102,Encephalomyelitis,outcome
+103,GuillainBarreSyndrome,103,GuillainBarreSyndrome,outcome
+104,TransverseMyelitis,104,TransverseMyelitis,outcome
+201,SARS-CoV-2 PCR positive test,201,SARS-CoV-2 PCR positive test,covid
+301,dose1_AZ_365d,301,dose1_AZ_365d,vax_main
+302,dose1_janssen_365d,302,dose1_janssen_365d,vax_main
+303,dose1_moderna_365d,303,dose1_moderna_365d,vax_main
+304,dose1_pfizer_365d,304,dose1_pfizer_365d,vax_main
+305,dose2_AZ_365d,305,dose2_AZ_365d,vax_main
+306,dose2_moderna_365d,306,dose2_moderna_365d,vax_main
+307,dose2_pfizer_365d,307,dose2_pfizer_365d,vax_main
+401,dose1_AZ_365d_21d,401,dose1_AZ_365d_21d,vax_21d
+402,dose1_janssen_365d_21d,402,dose1_janssen_365d_21d,vax_21d
+403,dose1_moderna_365d_21d,403,dose1_moderna_365d_21d,vax_21d
+404,dose1_pfizer_365d_21d,404,dose1_pfizer_365d_21d,vax_21d
+405,dose2_AZ_365d_21d,405,dose2_AZ_365d_21d,vax_21d
+406,dose2_moderna_365d_21d,406,dose2_moderna_365d_21d,vax_21d
+407,dose2_pfizer_365d_21d,407,dose2_pfizer_365d_21d,vax_21d
+501,dose1_AZ_NO_365d,501,dose1_AZ_NO_365d,vax_wo365d
+502,dose1_janssen_NO_365d,502,dose1_janssen_NO_365d,vax_wo365d
+503,dose1_moderna_NO_365d,503,dose1_moderna_NO_365d,vax_wo365d
+504,dose1_pfizer_NO_365d,504,dose1_pfizer_NO_365d,vax_wo365d
+505,dose2_AZ_NO_365d,505,dose2_AZ_NO_365d,vax_wo365d
+506,dose2_moderna_NO_365d,506,dose2_moderna_NO_365d,vax_wo365d
+507,dose2_pfizer_NO_365d,507,dose2_pfizer_NO_365d,vax_wo365d

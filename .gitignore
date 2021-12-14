@@ -1,5 +1,6 @@
 4_StudyOutput/*
 5_Shiny CovVax/*
+!5_Shiny CovVax/app.R
 !5_Shiny CovVax/app_NeuroAEs.R
 !5_Shiny CovVax/global_NeuroAEs.R
 !5_Shiny CovVax/ShinyCovVax.RProj

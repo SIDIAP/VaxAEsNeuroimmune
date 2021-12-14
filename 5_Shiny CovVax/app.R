@@ -18,19 +18,19 @@ library(epitools)
 
 #### Load data -----
 load(here("data", "Network.patient.characteristcis.RData")) 
-Network.patient.characteristcis<-Network.patient.characteristcis%>% 
-  filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
+# Network.patient.characteristcis<-Network.patient.characteristcis%>% 
+#   filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
 load(here("data", "Network.Survival.summary.RData"))
-Network.Survival.summary<-Network.Survival.summary%>% 
-  filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
+# Network.Survival.summary<-Network.Survival.summary%>% 
+#   filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
 Network.Survival.summary<-Network.Survival.summary %>% 
   mutate(`Cumulative incidence`=ifelse(Events %in% c(0,1,2,3,4), " ", 
                                        `Cumulative incidence`)) %>% 
   mutate(Events=ifelse(Events %in% c(0,1,2,3,4), "<5",Events))
 
 load(here("data", "Network.IR.RData"))
-Network.IR<-Network.IR%>% 
-  filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
+# Network.IR<-Network.IR%>% 
+#   filter(str_detect(pop, "ChAdOx1 second", negate=TRUE))
 
 load(here("data", "COVID_diagnosis_21d_background.pop.IRR.RData"))
 load(here("data", "COVID_diagnosis_90d_background.pop.IRR.RData"))

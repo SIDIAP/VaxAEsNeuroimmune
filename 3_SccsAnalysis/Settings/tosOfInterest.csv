@@ -1,41 +1,65 @@
-"","exposureId","outcomeId","outcomeName","group","exposureName"
-"1",1,1,"BellsPalsy","main_vax","BNT162b2 first-dose"
-"2",1,2,"Encephalomyelitis","main_vax","BNT162b2 first-dose"
-"3",1,3,"GuillainBarreSyndrome","main_vax","BNT162b2 first-dose"
-"4",1,4,"TransverseMyelitis","main_vax","BNT162b2 first-dose"
-"5",2,1,"BellsPalsy","main_vax","BNT162b2 second-dose"
-"6",2,2,"Encephalomyelitis","main_vax","BNT162b2 second-dose"
-"7",2,3,"GuillainBarreSyndrome","main_vax","BNT162b2 second-dose"
-"8",2,4,"TransverseMyelitis","main_vax","BNT162b2 second-dose"
-"9",3,1,"BellsPalsy","main_vax","ChAdOx1 first-dose"
-"10",3,2,"Encephalomyelitis","main_vax","ChAdOx1 first-dose"
-"11",3,3,"GuillainBarreSyndrome","main_vax","ChAdOx1 first-dose"
-"12",3,4,"TransverseMyelitis","main_vax","ChAdOx1 first-dose"
-"13",4,1,"BellsPalsy","main_vax","ChAdOx1 second-dose"
-"14",4,2,"Encephalomyelitis","main_vax","ChAdOx1 second-dose"
-"15",4,3,"GuillainBarreSyndrome","main_vax","ChAdOx1 second-dose"
-"16",4,4,"TransverseMyelitis","main_vax","ChAdOx1 second-dose"
-"17",8,1,"BellsPalsy","main_vax","BNT162b2 first-dose (no prior covid)"
-"18",8,2,"Encephalomyelitis","main_vax","BNT162b2 first-dose (no prior covid)"
-"19",8,3,"GuillainBarreSyndrome","main_vax","BNT162b2 first-dose (no prior covid)"
-"20",8,4,"TransverseMyelitis","main_vax","BNT162b2 first-dose (no prior covid)"
-"21",9,1,"BellsPalsy","main_vax","BNT162b2 second-dose (no prior covid)"
-"22",9,2,"Encephalomyelitis","main_vax","BNT162b2 second-dose (no prior covid)"
-"23",9,3,"GuillainBarreSyndrome","main_vax","BNT162b2 second-dose (no prior covid)"
-"24",9,4,"TransverseMyelitis","main_vax","BNT162b2 second-dose (no prior covid)"
-"25",10,1,"BellsPalsy","main_vax","ChAdOx1 first-dose (no prior covid)"
-"26",10,2,"Encephalomyelitis","main_vax","ChAdOx1 first-dose (no prior covid)"
-"27",10,3,"GuillainBarreSyndrome","main_vax","ChAdOx1 first-dose (no prior covid)"
-"28",10,4,"TransverseMyelitis","main_vax","ChAdOx1 first-dose (no prior covid)"
-"29",11,1,"BellsPalsy","main_vax","ChAdOx1 second-dose (no prior covid)"
-"30",11,2,"Encephalomyelitis","main_vax","ChAdOx1 second-dose (no prior covid)"
-"31",11,3,"GuillainBarreSyndrome","main_vax","ChAdOx1 second-dose (no prior covid)"
-"32",11,4,"TransverseMyelitis","main_vax","ChAdOx1 second-dose (no prior covid)"
-"33",15,1,"BellsPalsy","main_cov","COVID19 PCR positive test 21d"
-"34",15,2,"Encephalomyelitis","main_cov","COVID19 PCR positive test 21d"
-"35",15,3,"GuillainBarreSyndrome","main_cov","COVID19 PCR positive test 21d"
-"36",15,4,"TransverseMyelitis","main_cov","COVID19 PCR positive test 21d"
-"37",16,1,"BellsPalsy","main_cov","COVID19 PCR positive test 90d"
-"38",16,2,"Encephalomyelitis","main_cov","COVID19 PCR positive test 90d"
-"39",16,3,"GuillainBarreSyndrome","main_cov","COVID19 PCR positive test 90d"
-"40",16,4,"TransverseMyelitis","main_cov","COVID19 PCR positive test 90d"
+;exposureId;outcomeId;outcomeName;group;exposureName
+1;1;1;BellsPalsy;main_vax;BNT162b2 first-dose
+2;1;2;Encephalomyelitis;main_vax;BNT162b2 first-dose
+3;1;3;GuillainBarreSyndrome;main_vax;BNT162b2 first-dose
+4;1;4;TransverseMyelitis;main_vax;BNT162b2 first-dose
+5;2;1;BellsPalsy;main_vax;BNT162b2 second-dose
+6;2;2;Encephalomyelitis;main_vax;BNT162b2 second-dose
+7;2;3;GuillainBarreSyndrome;main_vax;BNT162b2 second-dose
+8;2;4;TransverseMyelitis;main_vax;BNT162b2 second-dose
+9;3;1;BellsPalsy;main_vax;ChAdOx1 first-dose
+10;3;2;Encephalomyelitis;main_vax;ChAdOx1 first-dose
+11;3;3;GuillainBarreSyndrome;main_vax;ChAdOx1 first-dose
+12;3;4;TransverseMyelitis;main_vax;ChAdOx1 first-dose
+13;4;1;BellsPalsy;main_vax;ChAdOx1 second-dose
+14;4;2;Encephalomyelitis;main_vax;ChAdOx1 second-dose
+15;4;3;GuillainBarreSyndrome;main_vax;ChAdOx1 second-dose
+16;4;4;TransverseMyelitis;main_vax;ChAdOx1 second-dose
+17;5;1;BellsPalsy;main_vax;mRNA-1273 first-dose
+18;5;2;Encephalomyelitis;main_vax;mRNA-1273 first-dose
+19;5;3;GuillainBarreSyndrome;main_vax;mRNA-1273 first-dose
+20;5;4;TransverseMyelitis;main_vax;mRNA-1273 first-dose
+21;6;1;BellsPalsy;main_vax;mRNA-1273 second-dose
+22;6;2;Encephalomyelitis;main_vax;mRNA-1273 second-dose
+23;6;3;GuillainBarreSyndrome;main_vax;mRNA-1273 second-dose
+24;6;4;TransverseMyelitis;main_vax;Ad26.COV2.S first-dose
+25;7;1;BellsPalsy;main_vax;Ad26.COV2.S first-dose
+26;7;2;Encephalomyelitis;main_vax;Ad26.COV2.S first-dose
+27;7;3;GuillainBarreSyndrome;main_vax;Ad26.COV2.S first-dose
+28;7;4;TransverseMyelitis;main_vax;Ad26.COV2.S first-dose
+29;8;1;BellsPalsy;main_vax;BNT162b2 first-dose (no prior covid)
+30;8;2;Encephalomyelitis;main_vax;BNT162b2 first-dose (no prior covid)
+31;8;3;GuillainBarreSyndrome;main_vax;BNT162b2 first-dose (no prior covid)
+32;8;4;TransverseMyelitis;main_vax;BNT162b2 first-dose (no prior covid)
+33;9;1;BellsPalsy;main_vax;BNT162b2 second-dose (no prior covid)
+34;9;2;Encephalomyelitis;main_vax;BNT162b2 second-dose (no prior covid)
+35;9;3;GuillainBarreSyndrome;main_vax;BNT162b2 second-dose (no prior covid)
+36;9;4;TransverseMyelitis;main_vax;BNT162b2 second-dose (no prior covid)
+37;10;1;BellsPalsy;main_vax;ChAdOx1 first-dose (no prior covid)
+38;10;2;Encephalomyelitis;main_vax;ChAdOx1 first-dose (no prior covid)
+39;10;3;GuillainBarreSyndrome;main_vax;ChAdOx1 first-dose (no prior covid)
+40;10;4;TransverseMyelitis;main_vax;ChAdOx1 first-dose (no prior covid)
+41;11;1;BellsPalsy;main_vax;ChAdOx1 second-dose (no prior covid)
+42;11;2;Encephalomyelitis;main_vax;ChAdOx1 second-dose (no prior covid)
+43;11;3;GuillainBarreSyndrome;main_vax;ChAdOx1 second-dose (no prior covid)
+44;11;4;TransverseMyelitis;main_vax;ChAdOx1 second-dose (no prior covid)
+45;12;1;BellsPalsy;main_vax;mRNA-1273 first-dose (no prior covid)
+46;12;2;Encephalomyelitis;main_vax;mRNA-1273 first-dose (no prior covid)
+47;12;3;GuillainBarreSyndrome;main_vax;mRNA-1273 first-dose (no prior covid)
+48;12;4;TransverseMyelitis;main_vax;mRNA-1273 first-dose (no prior covid)
+49;13;1;BellsPalsy;main_vax;mRNA-1273 second-dose (no prior covid)
+50;13;2;Encephalomyelitis;main_vax;mRNA-1273 second-dose (no prior covid)
+51;13;3;GuillainBarreSyndrome;main_vax;mRNA-1273 second-dose (no prior covid)
+52;13;4;TransverseMyelitis;main_vax;Ad26.COV2.S first-dose (no prior covid)
+53;14;1;BellsPalsy;main_vax;Ad26.COV2.S first-dose (no prior covid)
+54;14;2;Encephalomyelitis;main_vax;Ad26.COV2.S first-dose (no prior covid)
+55;14;3;GuillainBarreSyndrome;main_vax;Ad26.COV2.S first-dose (no prior covid)
+56;14;4;TransverseMyelitis;main_vax;Ad26.COV2.S first-dose (no prior covid)
+57;15;1;BellsPalsy;main_cov;COVID19 PCR positive test 21d
+58;15;2;Encephalomyelitis;main_cov;COVID19 PCR positive test 21d
+59;15;3;GuillainBarreSyndrome;main_cov;COVID19 PCR positive test 21d
+60;15;4;TransverseMyelitis;main_cov;COVID19 PCR positive test 21d
+61;16;1;BellsPalsy;main_cov;COVID19 PCR positive test 90d
+62;16;2;Encephalomyelitis;main_cov;COVID19 PCR positive test 90d
+63;16;3;GuillainBarreSyndrome;main_cov;COVID19 PCR positive test 90d
+64;16;4;TransverseMyelitis;main_cov;COVID19 PCR positive test 90d

@@ -107,7 +107,7 @@
   },
   {
     "analysisId": 2,
-    "description": "age and season model",
+    "description": "age and season model 21d split",
     "getDbSccsDataArgs": {
       "useCustomCovariates": false,
       "useNestingCohort": false,
@@ -385,7 +385,123 @@
           "end": 90,
           "endAnchor": "era start",
           "firstOccurrenceOnly": false,
-          "splitPoints": 21,
+          "allowRegularization": false,
+          "isControlInterval": false,
+          "attr_class": "EraCovariateSettings"
+        },
+        {
+          "includeEraIds": "exposureId",
+          "label": "Pre-exposure 21d",
+          "stratifyById": true,
+          "start": -21,
+          "startAnchor": "era start",
+          "end": -1,
+          "endAnchor": "era start",
+          "firstOccurrenceOnly": false,
+          "allowRegularization": false,
+          "isControlInterval": false,
+          "attr_class": "EraCovariateSettings"
+        }
+      ],
+      "ageCovariateSettings": {
+        "ageKnots": 5,
+        "allowRegularization": false,
+        "computeConfidenceIntervals": false,
+        "attr_class": "ageSettings"
+      },
+      "seasonalityCovariateSettings": {
+        "seasonKnots": 4,
+        "allowRegularization": false,
+        "computeConfidenceIntervals": false,
+        "attr_class": "SeasonalityCovariateSettings"
+      },
+      "minCasesForAgeSeason": 10000,
+      "eventDependentObservation": true,
+      "attr_class": "args"
+    },
+    "fitSccsModelArgs": {
+      "prior": {
+        "priorType": "laplace",
+        "variance": 1,
+        "exclude": null,
+        "graph": null,
+        "neighborhood": null,
+        "useCrossValidation": true,
+        "forceIntercept": false,
+        "attr_class": "cyclopsPrior"
+      },
+      "control": {
+        "maxIterations": 1000,
+        "tolerance": 1e-06,
+        "convergenceType": "gradient",
+        "autoSearch": true,
+        "fold": 10,
+        "lowerLimit": 0.01,
+        "upperLimit": 20,
+        "gridSteps": 10,
+        "minCVData": 100,
+        "cvRepetitions": 1,
+        "noiseLevel": "silent",
+        "threads": 14,
+        "seed": null,
+        "resetCoefficients": false,
+        "startingVariance": -1,
+        "useKKTSwindle": false,
+        "tuneSwindle": 10,
+        "selectorType": "auto",
+        "initialBound": 2,
+        "maxBoundCount": 5,
+        "algorithm": "ccd",
+        "attr_class": "cyclopsControl"
+      },
+      "attr_class": "args"
+    },
+    "attr_class": "sccsAnalysis"
+  },
+  {
+    "analysisId": 5,
+    "description": "age and season model 21 d without split",
+    "getDbSccsDataArgs": {
+      "useCustomCovariates": false,
+      "useNestingCohort": false,
+      "deleteCovariatesSmallCount": 100,
+      "studyStartDate": "20170101",
+      "studyEndDate": "",
+      "maxCasesPerOutcome": 0,
+      "exposureIds": "exposureId",
+      "customCovariateIds": "",
+      "attr_class": "args"
+    },
+    "createStudyPopulationArgs": {
+      "firstOutcomeOnly": true,
+      "naivePeriod": 0,
+      "attr_class": "args"
+    },
+    "design": "SCCS",
+    "createSccsIntervalDataArgs": {
+      "eraCovariateSettings": [
+        {
+          "includeEraIds": "exposureId",
+          "label": "vaccine 0",
+          "stratifyById": true,
+          "start": 0,
+          "startAnchor": "era start",
+          "end": 0,
+          "endAnchor": "era start",
+          "firstOccurrenceOnly": false,
+          "allowRegularization": false,
+          "isControlInterval": false,
+          "attr_class": "EraCovariateSettings"
+        },
+        {
+          "includeEraIds": "exposureId",
+          "label": "post-vaccine 21d no split",
+          "stratifyById": true,
+          "start": 1,
+          "startAnchor": "era start",
+          "end": 21,
+          "endAnchor": "era start",
+          "firstOccurrenceOnly": false,
           "allowRegularization": false,
           "isControlInterval": false,
           "attr_class": "EraCovariateSettings"

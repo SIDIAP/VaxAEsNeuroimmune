@@ -301,7 +301,7 @@ for (outputFolderName in outputFolderNames){
   Power_mdrr <- list()
   for (i in 1 : nrow(reference)){
     sccsIntervalData <- SelfControlledCaseSeries::loadSccsIntervalData(file.path(outputFolderName,reference$sccsIntervalDataFile[i]))
-    mdrr <-  SelfControlledCaseSeries::computeMdrr(sccsIntervalData,1000)
+    mdrr <-  SelfControlledCaseSeries::computeMdrr(sccsIntervalData,1001)
     mdrr$exposureId <- reference$exposureId[i]
     mdrr$outcomeId  <- reference$outcomeId [i]
     mdrr$analysisId  <- reference$analysisId [i]
@@ -386,6 +386,14 @@ covarVax <- createEraCovariateSettings(
   endAnchor = "era start",
   splitPoints = c(7,14))
 
+covarVax21noSplit <- createEraCovariateSettings(
+  label = "post-vaccine 21d no split",
+  includeEraIds = "exposureId",
+  startAnchor = "era start" ,
+  start = 1,
+  end = 21,
+  endAnchor = "era start")
+
 sameday <- createEraCovariateSettings(label = "vaccine 0",
                                       includeEraIds = "exposureId",
                                       #    includeEraIds = VaxAZ,
@@ -407,14 +415,12 @@ covarPre1yVax <- createEraCovariateSettings(label = "Pre-exposure 1yr",
                                             end = -1,
                                             endAnchor = "era start")
 
-covarCov90 <- createEraCovariateSettings(
-  label = "post-covid-19 90d",
-  includeEraIds = "exposureId",
-  startAnchor = "era start" ,
-  start = 1,
-  end = 90,
-  endAnchor = "era start",
-  splitPoints = c(21))
+covarCov90 <- createEraCovariateSettings(label = "post-covid-19 90d",
+                                         includeEraIds = "exposureId",
+                                         startAnchor = "era start" ,
+                                         start = 1,
+                                         end = 90,
+                                         endAnchor = "era start")
 
 
 createSccsIntervalDataArgs1 <- createCreateSccsIntervalDataArgs(
@@ -450,6 +456,14 @@ createSccsIntervalDataArgs4 <- createCreateSccsIntervalDataArgs(
   seasonalityCovariateSettings = seasonalityCovariateSettings,
   eventDependentObservation = TRUE)
 
+createSccsIntervalDataArgs5 <- createCreateSccsIntervalDataArgs(
+  eraCovariateSettings = list(sameday,
+                              covarVax21noSplit,
+                              covarPreVax),
+  ageCovariateSettings = ageCovariateSettings,
+  seasonalityCovariateSettings = seasonalityCovariateSettings,
+  eventDependentObservation = TRUE)
+
 
 fitSccsModelArgs <- createFitSccsModelArgs(control = createControl(threads = parallel::detectCores()-1))
 
@@ -462,7 +476,7 @@ sccsAnalysis1 <- createSccsAnalysis(analysisId = 1,
                                     fitSccsModelArgs = fitSccsModelArgs)
 
 sccsAnalysis2 <- createSccsAnalysis(analysisId = 2,
-                                    description = "age and season model",
+                                    description = "age and season model 21d split",
                                     getDbSccsDataArgs = getDbSccsDataArgs1,
                                     createStudyPopulationArgs = createStudyPopulationArgs1,
                                     createSccsIntervalDataArgs = createSccsIntervalDataArgs2,
@@ -482,8 +496,15 @@ sccsAnalysis4 <- createSccsAnalysis(analysisId = 4,
                                     createSccsIntervalDataArgs = createSccsIntervalDataArgs4,
                                     fitSccsModelArgs = fitSccsModelArgs)
 
-sccsAnalysisList <- list(sccsAnalysis1, sccsAnalysis2,sccsAnalysis3)
-sccsAnalysisList_Cov <- list(sccsAnalysis1, sccsAnalysis2,sccsAnalysis3,sccsAnalysis4)
+sccsAnalysis5 <- createSccsAnalysis(analysisId = 5,
+                                    description = "age and season model 21 d without split",
+                                    getDbSccsDataArgs = getDbSccsDataArgs1,
+                                    createStudyPopulationArgs = createStudyPopulationArgs1,
+                                    createSccsIntervalDataArgs = createSccsIntervalDataArgs5,
+                                    fitSccsModelArgs = fitSccsModelArgs)
+
+sccsAnalysisList <- list(sccsAnalysis1, sccsAnalysis2,sccsAnalysis3,sccsAnalysis5)
+sccsAnalysisList_Cov <- list(sccsAnalysis1, sccsAnalysis2,sccsAnalysis3,sccsAnalysis4,sccsAnalysis5)
 
 SelfControlledCaseSeries::saveSccsAnalysisList(sccsAnalysisList, "./Settings/sccsAnalysisList.json")
 sccsAnalysisList <- SelfControlledCaseSeries::loadSccsAnalysisList("./Settings/sccsAnalysisList.json")

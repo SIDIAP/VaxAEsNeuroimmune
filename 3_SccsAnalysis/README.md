@@ -1,1 +1,0 @@
-# SIDIAP-CovidVaccinationAdverseEventsStudy

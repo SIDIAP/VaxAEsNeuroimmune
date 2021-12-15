@@ -351,7 +351,7 @@ data.frame(Overall=t(working.data %>%
                      nice.num.count(quantile(age,probs=0.25)),  " to ",
                      nice.num.count(quantile(age,probs=0.75)),   "]" ), 
      age.18_29=paste0(nice.num.count(sum(age_gr3=="18-29")),
-                      " (",  nice.num((sum(age_gr3=="20-29")/length(person_id))*100),  "%)"), 
+                      " (",  nice.num((sum(age_gr3=="18-29")/length(person_id))*100),  "%)"), 
      age.30_39=paste0(nice.num.count(sum(age_gr3=="30-39")),
                       " (",  nice.num((sum(age_gr3=="30-39")/length(person_id))*100),  "%)"), 
     age.40_49=paste0(nice.num.count(sum(age_gr3=="40-49")),

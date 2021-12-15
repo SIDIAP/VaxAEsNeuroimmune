@@ -62,9 +62,9 @@ Pop<-Pop %>%
   mutate(age= year(cohort_start_date)-year_of_birth)
 }
 
-# only those aged 20 or older ----
+# only those aged 18 or older ----
 Pop<-Pop %>% 
-  filter(age>=18) #Change in age criteria 17/11/2021
+  filter(age>=18) 
 
 # age groups ----
 Pop<-Pop %>% 

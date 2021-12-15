@@ -363,6 +363,19 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
       select(cohort_definition_id, subject_id,
              cohort_start_date,cohort_end_date, dose1_dose2)
 
+#age >=18
+cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
+  left_join(person_db  %>% 
+              rename("subject_id"="person_id") %>% 
+     select("subject_id",  "year_of_birth", "month_of_birth", "day_of_birth"))%>%
+  mutate(dob= to_date(paste(year_of_birth, month_of_birth, day_of_birth, 
+                            sep="-"), 
+                      'YYYY-MM-DD'))  %>%
+    mutate(age = floor((cohort_start_date-dob)/365.25))  %>% 
+   filter(age>=18) %>% 
+  select(-c("year_of_birth", "month_of_birth", "day_of_birth",
+            "dob", "age"))
+
 # insert into tmp table
 print(paste0("-- Inserting ", working.study.cohort, " into database")) 
 start.insert<-Sys.time()
@@ -447,6 +460,20 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
 
 cohort.to.instantiate_db<-cohort.to.instantiate_db %>% 
   mutate(dose1_dose2=as.integer(NA))
+
+#age >=18
+cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
+  left_join(person_db  %>% 
+              rename("subject_id"="person_id") %>% 
+     select("subject_id",  "year_of_birth", "month_of_birth", "day_of_birth"))%>%
+  mutate(dob= to_date(paste(year_of_birth, month_of_birth, day_of_birth, 
+                            sep="-"), 
+                      'YYYY-MM-DD'))  %>%
+    mutate(age = floor((cohort_start_date-dob)/365.25))  %>% 
+   filter(age>=18)%>% 
+  select(-c("year_of_birth", "month_of_birth", "day_of_birth",
+            "dob", "age"))
+
 
 # insert into tmp table
 print(paste0("-- Inserting ", working.study.cohort, " into database")) 

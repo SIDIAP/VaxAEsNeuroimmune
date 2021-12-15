@@ -254,7 +254,8 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
   window_order(person_id,drug_exposure_start_date) %>%
   distinct() %>%  
   mutate(seq = row_number()) %>% 
-  select(person_id,drug_exposure_start_date, seq)
+  select(person_id,drug_exposure_start_date, seq) %>% 
+  ungroup()
     
 # get first or second dose depending on working cohort
 if(str_detect(working.study.cohort, "first-dose")){

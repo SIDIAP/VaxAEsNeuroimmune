@@ -261,23 +261,27 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
 if(str_detect(working.study.cohort, "first-dose")){
 # nb keep date of second dose so we can use it for censoring
 # keep first two records and get time between doses      
-cohort.to.instantiate_db<-cohort.to.instantiate_db %>% 
+cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
+        group_by(person_id) %>% 
         filter(drug_exposure_start_date>=start_date_vacc) %>% 
         filter(seq %in% c(1,2)) %>% 
         mutate(second.dose.date=lead(drug_exposure_start_date,
                          order_by = c("person_id"))) %>% # lead - second dose
         mutate(dose1_dose2= second.dose.date- drug_exposure_start_date)%>% 
-        filter(seq==1) 
+        filter(seq==1) %>% 
+        ungroup()
     }
     
 if(str_detect(working.study.cohort, "second-dose")){
 cohort.to.instantiate_db<-cohort.to.instantiate_db %>% 
+        group_by(person_id) %>% 
         filter(drug_exposure_start_date>=start_date_vacc) %>% 
         filter(seq %in% c(1,2)) %>% 
         mutate(first.dose.date=lag(drug_exposure_start_date,
                          order_by = c("person_id"))) %>% # lag - first dose
         mutate(dose1_dose2= drug_exposure_start_date-first.dose.date)%>% 
-        filter(seq==2)   
+        filter(seq==2)   %>% 
+        ungroup()
 
  #3) exclude if second dose record is outside window
       # sum(cohort.to.instantiate$dose1_dose2<18)
@@ -359,10 +363,9 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
       mutate(cohort_definition_id=!!study.cohorts$id[i]) %>% 
       filter(drug_exposure_start_date<= !!end_date_vacc_covid) %>% 
       rename("subject_id"="person_id") %>% 
-      rename("cohort_start_date"="drug_exposure_start_date") %>%
-      mutate("cohort_end_date"= as.Date(end_date_vacc_covid)) %>% 
+      rename("cohort_start_date"="drug_exposure_start_date") %>% 
       select(cohort_definition_id, subject_id,
-             cohort_start_date,cohort_end_date, dose1_dose2)
+             cohort_start_date,dose1_dose2)
 
 #age >=18
 cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
@@ -376,7 +379,22 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
    filter(age>=18) %>% 
   select(-c("year_of_birth", "month_of_birth", "day_of_birth",
             "dob", "age"))
+# end date
+cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+  left_join(observation_period_db  %>% 
+              rename("subject_id"="person_id") %>% 
+              select("subject_id","observation_period_end_date"))%>%
+  mutate(days_to_obs_end= observation_period_end_date- cohort_start_date) %>% 
+  mutate(days_to_obs_end= ifelse(!is.na(dose1_dose2) & dose1_dose2< days_to_obs_end,
+                                 dose1_dose2, days_to_obs_end))%>% 
+  mutate(days_to_obs_end= ifelse(days_to_obs_end>21, 21, days_to_obs_end))%>% 
+  mutate(cohort_end_date = cohort_start_date + sql("interval '1 day' * days_to_obs_end")) %>% 
+  mutate(cohort_end_date=as.Date(cohort_end_date))
 
+cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+   select(cohort_definition_id, subject_id, cohort_start_date,
+          cohort_end_date, dose1_dose2)
+      
 # insert into tmp table
 print(paste0("-- Inserting ", working.study.cohort, " into database")) 
 start.insert<-Sys.time()
@@ -424,8 +442,7 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
         mutate(cohort_definition_id=!!study.cohorts$id[i]) %>% 
         rename("subject_id"="person_id") %>% 
         rename("cohort_start_date"="cohort_start_date")%>% 
-        mutate("cohort_end_date"=as.Date(end_date_vacc_covid)) %>%  
-        select(cohort_definition_id, subject_id, cohort_start_date,cohort_end_date)
+        select(cohort_definition_id, subject_id, cohort_start_date)
       
 # drop if vaccinated prior to COVID 
 if(db.name=="CPRD AURUM"){
@@ -476,6 +493,31 @@ cohort.to.instantiate_db<-cohort.to.instantiate_db %>%
             "dob", "age"))
 
 
+# end date
+cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+  left_join(observation_period_db  %>% 
+              rename("subject_id"="person_id") %>% 
+              select("subject_id","observation_period_end_date"))%>%
+  mutate(days_to_obs_end= observation_period_end_date- cohort_start_date)
+
+if(str_detect(working.study.cohort, "21d")){
+cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+  mutate(days_to_obs_end= ifelse(days_to_obs_end>21, 21, days_to_obs_end))
+} else {
+cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+  mutate(days_to_obs_end= ifelse(days_to_obs_end>21, 21, days_to_obs_end))  
+}
+
+cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+  mutate(cohort_end_date = cohort_start_date + sql("interval '1 day' * days_to_obs_end")) %>% 
+  mutate(cohort_end_date=as.Date(cohort_end_date))
+
+ cohort.to.instantiate_db<-cohort.to.instantiate_db  %>%
+   select(cohort_definition_id, subject_id, cohort_start_date,
+          cohort_end_date, dose1_dose2)
+
+
+
 # insert into tmp table
 print(paste0("-- Inserting ", working.study.cohort, " into database")) 
 start.insert<-Sys.time()
@@ -503,25 +545,6 @@ DBI::dbExecute(db, sql_query)
 duration <- Sys.time()-start.insert
 print(paste("--- Inserting", working.study.cohort, "took", 
             round(duration[[1]], 2),  units(duration)))
-
-
-
-
-      
-# # insert into database
-# print(paste0("-- Inserting ", working.study.cohort, " into database")) 
-# start.insert<-Sys.time()
-# sql_query <- glue::glue("INSERT \n",
-#                           "INTO {results_database_schema}.{cohortTableExposurestmp}\n",
-#                           "SELECT * FROM (\n",
-#                           dbplyr::sql_render(cohort.to.instantiate_db),
-#                           "\n) AS from_table")
-# DBI::dbExecute(db, as.character(sql_query))
-# duration <- Sys.time()-start.insert
-# print(paste("--- Inserting", working.study.cohort, "took", 
-#             round(duration[[1]], 2),  units(duration)))
-
-      
     }
     
     

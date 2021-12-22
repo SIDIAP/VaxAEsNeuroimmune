@@ -1,3 +1,20 @@
+if (!dir.exists(output.folder)){
+dir.create(output.folder)
+}
+outputFolder_SccsVax <- file.path(output.folder,"SccsVax")
+outputFolder_SccsCov <- file.path(output.folder,"SccsCov")
+if (!file.exists(file.path(outputFolder_SccsVax)))
+  dir.create(file.path(outputFolder_SccsVax))
+if (!file.exists(file.path(outputFolder_SccsCov)))
+  dir.create(file.path(outputFolder_SccsCov))
+
+outputFolder_SccsVax_w_history <- file.path(output.folder,"Vax_w_history")
+outputFolder_SccsCov_w_history <- file.path(output.folder,"Cov_w_history")
+if (!file.exists(file.path(outputFolder_SccsVax_w_history)))
+  dir.create(file.path(outputFolder_SccsVax_w_history))
+if (!file.exists(file.path(outputFolder_SccsCov_w_history)))
+  dir.create(file.path(outputFolder_SccsCov_w_history))
+
 # open connection to db ----
 conn <- connect(connectionDetails)
 # helper functions -----
@@ -294,9 +311,7 @@ source(here("2_BackgroundRatesAnalysis" ,"RunBackgroundRatesAnalysis.R"))
 disconnect(conn)
 
 # save ----
-if (!dir.exists(output.folder)){
-dir.create(output.folder)
-} 
+ 
 save(IR.summary, file = paste0(output.folder, "/IR.summary_", db.name, ".RData"))
 save(Patient.characteristcis, file = paste0(output.folder, "/Patient.characteristcis_", db.name, ".RData"))
 write.csv(vacc_table, file = paste0(output.folder, "/vac_table_", db.name, ".csv"))

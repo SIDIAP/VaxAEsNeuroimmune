@@ -23,6 +23,14 @@ library(scales)
 library(forcats)
 library(epiR)
 library(RPostgreSQL)
+library(readr)
+library(parallel)
+library(dplyr)
+library(tidyr)
+library(here)
+library(stringr)
+
+
 # please load the above packages 
 # you should have them all available, with the required version, after
 # having run renv::restore above
@@ -86,7 +94,7 @@ create.outcome.cohorts<- FALSE
 create.covid.cohorts <- FALSE 
 create.exposure.cohorts <- FALSE 
 
-# choose cohorts to instantiate -----
+# choose cohorts to run -----
 run.vax.cohorts<-TRUE
 run.covid.cohorts<-TRUE
 run.general.pop.cohorts<-TRUE

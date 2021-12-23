@@ -153,6 +153,53 @@ sccsSummary_all <- bind_rows(sccsSummary_all)
 readr::write_csv(sccsSummary_all, file.path(output.folder, "sccsSummary_all.csv"))
 saveRDS(sccsSummary_all,file.path(output.folder, "sccsSummary_all.RDS"))
 
+# result table new ------------------------------------------------
+
+outputFolder_Vax <- file.path(outputFolder,"Vax")
+outputFolder_Cov <- file.path(outputFolder,"Cov")
+outputFolder_Vax_21d <- file.path(outputFolder,"Vax_21d")
+outputFolder_Cov_21d <- file.path(outputFolder,"Cov_21d")
+outputFolder_Vax_w_history <- file.path(outputFolder,"Vax_w_history")
+outputFolder_Cov_w_history <- file.path(outputFolder,"Cov_w_history")
+
+outputFolderNames <- c(outputFolder_Vax,outputFolder_Vax_21d,outputFolder_Vax_w_history,outputFolder_Cov,outputFolder_Cov_21d,outputFolder_Cov_w_history)
+for (outputFolderName in outputFolderNames){
+  reference <- readRDS(file.path(outputFolderName, "outcomeModelReference.rds"))
+  reference_InUse <- reference %>% filter(analysisId %in% c(2,4,5) & exposureId %in% c(1,3,8,10,15,16) & outcomeId ==1 )
+  
+  results <- list()
+  for (i in 1 : nrow(reference_InUse)){
+    sccsModel <- readRDS(file.path(outputFolderName, reference_InUse$sccsModelFile[i]))
+    estimates <-getModel(sccsModel)
+    estimates <- estimates %>% filter(originalEraType!= "hoi") %>% distinct() %>% rename(covariateId = id)
+    
+    event_num <- sccsModel[["metaData"]][["covariateStatistics"]]
+    
+    row <- estimates %>% inner_join(event_num, by=c("covariateId"))
+    
+    row$exposureId <- reference_InUse$exposureId[i]
+    row$outcomeId  <- reference_InUse$outcomeId [i]
+    row$analysisId  <- reference_InUse$analysisId [i]
+    
+    results[[i]] <- row
+  }
+  results <- bind_rows(results)
+  readr::write_csv(results, file.path(outputFolderName, "results.csv"))
+  saveRDS(results,file.path(outputFolderName, "results.RDS"))
+}
+
+results_all <- list()
+for (outputFolderName in outputFolderNames){
+  results <- readRDS(file.path(outputFolderName, "results.RDS"))
+  AnaName <- gsub("(.*/\\s*(.*$))", "\\2", outputFolderName)
+  results_all[[AnaName]] <- results
+  results_all[[AnaName]]$ExposureGroup <- AnaName
+}
+results_all <- bind_rows(results_all)
+readr::write_csv(sccsSummary_all, file.path(outputFolder, "results_all.csv"))
+saveRDS(sccsSummary_all,file.path(outputFolder, "results_all.RDS"))
+
+
 # get mdrrs -----
 t1 <- Sys.time()
 for (outputFolderName in outputFolderNames){

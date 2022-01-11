@@ -9,7 +9,7 @@ sccsAnalysisList_Cov <- SelfControlledCaseSeries::loadSccsAnalysisList(
 createTos <- function(outputFolder,group) {
   pathToCsv <- here::here("3_SccsAnalysis","Settings", "tosOfInterest.csv")
   tosOfInterest <- suppressMessages(read_delim("3_SccsAnalysis/Settings/tosOfInterest.csv", 
-     delim = ";", escape_double = FALSE, trim_ws = TRUE))
+     delim = ";", escape_double = FALSE, trim_ws = TRUE))# Berta: changed delim to ,
   tosOfInterest <- tosOfInterest[tosOfInterest$group==group,]
   tos <- unique(rbind(tosOfInterest[, c("exposureId", "outcomeId")]))
 
@@ -155,14 +155,14 @@ saveRDS(sccsSummary_all,file.path(output.folder, "sccsSummary_all.RDS"))
 
 # result table new ------------------------------------------------
 
-outputFolder_Vax <- file.path(outputFolder,"Vax")
-outputFolder_Cov <- file.path(outputFolder,"Cov")
-outputFolder_Vax_21d <- file.path(outputFolder,"Vax_21d")
-outputFolder_Cov_21d <- file.path(outputFolder,"Cov_21d")
-outputFolder_Vax_w_history <- file.path(outputFolder,"Vax_w_history")
-outputFolder_Cov_w_history <- file.path(outputFolder,"Cov_w_history")
+outputFolder_Vax <- file.path(output.folder,"SccsVax") # Berta
+outputFolder_Cov <- file.path(output.folder,"SccsCov") # Berta
+# Berta outputFolder_Vax_21d <- file.path(output.folder,"Vax_21d")
+# BertaoutputFolder_Cov_21d <- file.path(output.folder,"Cov_21d")
+outputFolder_Vax_w_history <- file.path(output.folder,"Vax_w_history")
+outputFolder_Cov_w_history <- file.path(output.folder,"Cov_w_history")
 
-outputFolderNames <- c(outputFolder_Vax,outputFolder_Vax_21d,outputFolder_Vax_w_history,outputFolder_Cov,outputFolder_Cov_21d,outputFolder_Cov_w_history)
+outputFolderNames <- c(outputFolder_Vax,outputFolder_Vax_w_history,outputFolder_Cov,outputFolder_Cov_w_history)#outputFolder_Vax_21d,outputFolder_Cov_21d,
 for (outputFolderName in outputFolderNames){
   reference <- readRDS(file.path(outputFolderName, "outcomeModelReference.rds"))
   reference_InUse <- reference %>% filter(analysisId %in% c(2,4,5) & exposureId %in% c(1,3,8,10,15,16) & outcomeId ==1 )
@@ -196,8 +196,8 @@ for (outputFolderName in outputFolderNames){
   results_all[[AnaName]]$ExposureGroup <- AnaName
 }
 results_all <- bind_rows(results_all)
-readr::write_csv(sccsSummary_all, file.path(outputFolder, "results_all.csv"))
-saveRDS(sccsSummary_all,file.path(outputFolder, "results_all.RDS"))
+readr::write_csv(sccsSummary_all, file.path(output.folder, "results_all.csv"))
+saveRDS(sccsSummary_all,file.path(output.folder, "results_all.RDS"))
 
 
 # get mdrrs -----
@@ -236,8 +236,8 @@ saveRDS(MDRR_all,file.path(output.folder, "MDRR_all.RDS"))
 
 ParallelLogger::clearLoggers()
 
-MDRR_all %>% filter(mdrr<2)
-
+MDRR_filtered <- MDRR_all %>% filter(mdrr<2)
+readr::write_csv(MDRR_filtered, file.path(output.folder, "MDRR_filtered.csv"))
 # diagnostics plot ------------------------------------------------
 
 options(scipen = 999)

@@ -1,0 +1,720 @@
+2021-12-15 09:07:04	[Main thread]	FATAL			Error in loadNamespace(name) :    there is no package called ‘SelfControlledCaseSeries’ 
+2021-12-15 09:07:04	[Main thread]	FATAL			Error in loadNamespace(name) :    there is no package called ‘SelfControlledCaseSeries’ 
+2021-12-15 09:07:10	[Main thread]	FATAL			Error in tosOfInterest[, c("exposureId", "outcomeId")] :    número incorreto de dimensiones 
+2021-12-15 09:07:11	[Main thread]	FATAL			Error in tosOfInterest[, c("exposureId", "outcomeId")] :    número incorreto de dimensiones 
+2021-12-15 09:07:11	[Main thread]	FATAL			Error in loadNamespace(name) :    there is no package called ‘SelfControlledCaseSeries’ 
+2021-12-15 09:07:12	[Main thread]	FATAL			Error in loadNamespace(name) :    there is no package called ‘SelfControlledCaseSeries’ 
+2021-12-15 09:07:12	[Main thread]	INFO			Completed SCCS analyses of vaccine cohort in 7.1 secs
+2021-12-15 09:07:12	[Main thread]	INFO			Completed SCCS analyses of vaccine cohort in 7.1 secs
+2021-12-15 09:07:50	[Main thread]	FATAL			Error: objeto 'SelfControlledCaseSeries' no encontrado 
+2021-12-15 09:07:50	[Main thread]	FATAL			Error: objeto 'SelfControlledCaseSeries' no encontrado 
+2021-12-15 09:08:30	[Main thread]	FATAL			Error in rversion() : no se pudo encontrar la función "rversion" 
+2021-12-15 09:08:31	[Main thread]	FATAL			Error in rversion() : no se pudo encontrar la función "rversion" 
+2021-12-15 09:08:35	[Main thread]	FATAL			Error in version() : no se pudo encontrar la función "version" 
+2021-12-15 09:08:36	[Main thread]	FATAL			Error in version() : no se pudo encontrar la función "version" 
+2021-12-15 09:08:56	[Main thread]	FATAL			Error in sessioninfo(9) : no se pudo encontrar la función "sessioninfo" 
+2021-12-15 09:08:56	[Main thread]	FATAL			Error in sessioninfo(9) : no se pudo encontrar la función "sessioninfo" 
+2021-12-15 09:08:59	[Main thread]	FATAL			Error in sessioninfo() : no se pudo encontrar la función "sessioninfo" 
+2021-12-15 09:09:00	[Main thread]	FATAL			Error in sessioninfo() : no se pudo encontrar la función "sessioninfo" 
+2021-12-15 09:09:51	[Main thread]	INFO			Completed SCCS analyses of vaccine cohort in 0.151 secs
+2021-12-15 09:09:51	[Main thread]	INFO			Completed SCCS analyses of vaccine cohort in 0.151 secs
+2021-12-15 09:09:51	[Main thread]	INFO			Completed SCCS analyses of vaccine cohort in 0.151 secs
+2021-12-15 09:11:11	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:11:11	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:11:11	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:11:12	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:11:12	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:11:12	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:11:12	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:11:12	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:11:12	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:11:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:11:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:11:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:11:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:11:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:11:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:11:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:11:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:11:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:11:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:11:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:11:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:11:20	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:11:23	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:11:25	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:11:27	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:11:27	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:11:27	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:11:28	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:11:28	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:11:28	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:11:28	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:11:28	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:11:28	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:11:29	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:11:29	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:11:29	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:11:30	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:11:30	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:11:30	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:11:30	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:11:30	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:11:30	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:11:32	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:11:39	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:11:39	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:11:39	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:11:42	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:11:42	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:11:42	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:11:43	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:11:43	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:11:43	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:11:49	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:11:49	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:11:49	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:11:49	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:11:49	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:11:49	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:11:50	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:11:50	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:11:50	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:11:50	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:11:50	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:11:50	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:11:58	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:11:59	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:11:59	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:11:59	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:12:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:12:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:12:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:12:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:12:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:12:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:12:02	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:12:02	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:12:02	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:12:03	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:12:03	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:12:03	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:12:03	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:12:03	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:12:03	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:14:18	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/Rtmpi2AKh9/file4634220128a/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:14:18	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/Rtmpi2AKh9/file4634220128a/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:14:18	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/Rtmpi2AKh9/file4634220128a/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:16:54	[Main thread]	WARN			package ‘remotes’ was built under R version 4.0.5
+2021-12-15 09:16:54	[Main thread]	WARN			package ‘remotes’ was built under R version 4.0.5
+2021-12-15 09:16:54	[Main thread]	WARN			package ‘remotes’ was built under R version 4.0.5
+2021-12-15 09:16:54	[Main thread]	WARN			package ‘DatabaseConnector’ was built under R version 4.0.5
+2021-12-15 09:16:54	[Main thread]	WARN			package ‘DatabaseConnector’ was built under R version 4.0.5
+2021-12-15 09:16:54	[Main thread]	WARN			package ‘DatabaseConnector’ was built under R version 4.0.5
+2021-12-15 09:16:55	[Main thread]	WARN			package ‘ggplot2’ was built under R version 4.0.5
+2021-12-15 09:16:55	[Main thread]	WARN			package ‘ggplot2’ was built under R version 4.0.5
+2021-12-15 09:16:55	[Main thread]	WARN			package ‘ggplot2’ was built under R version 4.0.5
+2021-12-15 09:16:56	[Main thread]	WARN			package ‘dbplyr’ was built under R version 4.0.5
+2021-12-15 09:16:56	[Main thread]	WARN			package ‘dbplyr’ was built under R version 4.0.5
+2021-12-15 09:16:56	[Main thread]	WARN			package ‘dbplyr’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘RSQLite’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘RSQLite’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘RSQLite’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘scales’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘scales’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘scales’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘DBI’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘DBI’ was built under R version 4.0.5
+2021-12-15 09:16:57	[Main thread]	WARN			package ‘DBI’ was built under R version 4.0.5
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/downloaded_packages', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/downloaded_packages', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/downloaded_packages', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/file4634220128a', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/file4634220128a', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/file4634220128a', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/remotes463417e21e4', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/remotes463417e21e4', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/remotes463417e21e4', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/rs-graphics-986b817d-0b11-46bf-bb3f-f647e7a79d4f', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/rs-graphics-986b817d-0b11-46bf-bb3f-f647e7a79d4f', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/rs-graphics-986b817d-0b11-46bf-bb3f-f647e7a79d4f', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/temp_libpath463439531113', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/temp_libpath463439531113', motivo 'Permission denied'
+2021-12-15 09:16:58	[Main thread]	WARN			no fue posible abrir el archivo 'C:\Users\BRAVEN~1\AppData\Local\Temp\Rtmpi2AKh9/temp_libpath463439531113', motivo 'Permission denied'
+2021-12-15 09:21:19	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8488611f0/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:21:19	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8488611f0/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:21:19	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8488611f0/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:23:02	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:23:02	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:23:02	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:23:03	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:23:03	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:23:03	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:23:03	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:23:03	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:23:03	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:23:04	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:23:04	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:23:04	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:23:04	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:23:04	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:23:04	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:23:05	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:23:05	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:23:05	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:23:05	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:23:05	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:23:05	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:23:06	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:23:06	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:23:06	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:23:06	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:23:06	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:23:06	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:23:07	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:23:08	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:23:09	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:23:10	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:23:10	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:23:10	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:23:11	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:23:11	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:23:11	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:23:11	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:23:11	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:23:11	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:23:12	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:23:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:23:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:23:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:23:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:23:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:23:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:23:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:23:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:23:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:23:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:23:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:23:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:23:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:23:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:23:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:23:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:23:26	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:23:26	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:23:26	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:23:27	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:23:27	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:23:27	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:23:30	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:23:30	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:23:30	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:23:31	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:23:32	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:23:33	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:23:33	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:23:33	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:23:34	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:23:34	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:23:34	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:23:34	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:23:34	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:23:34	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:23:35	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:23:35	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:23:35	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:23:36	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:23:36	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:23:36	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:23:36	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:23:36	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:23:36	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:24:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:24:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:24:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:24:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:24:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:24:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:24:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:24:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:24:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:24:19	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8348742db/SqlRender_1.8.1.tar.gz’ had non-zero exit status
+2021-12-15 09:24:19	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8348742db/SqlRender_1.8.1.tar.gz’ had non-zero exit status
+2021-12-15 09:24:19	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8348742db/SqlRender_1.8.1.tar.gz’ had non-zero exit status
+2021-12-15 09:24:36	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:24:36	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:24:36	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:24:37	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:24:37	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:24:37	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:24:37	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:24:37	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:24:37	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:24:38	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:24:39	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:24:40	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:24:41	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:24:41	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:24:42	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:24:44	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:24:45	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:24:46	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:24:48	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:24:55	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:24:55	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:24:55	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:24:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:24:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:24:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:24:59	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:24:59	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:24:59	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:25:03	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8466126/Andromeda_0.5.0.tar.gz’ had non-zero exit status
+2021-12-15 09:25:03	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8466126/Andromeda_0.5.0.tar.gz’ had non-zero exit status
+2021-12-15 09:25:03	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da8466126/Andromeda_0.5.0.tar.gz’ had non-zero exit status
+2021-12-15 09:25:09	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da872d1398/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:25:09	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da872d1398/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:25:09	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da872d1398/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:27:46	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:27:46	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:27:46	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘colorspace’
+2021-12-15 09:27:47	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:27:47	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:27:47	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\colorspace\libs\x64\colorspace.dll  a C:\Users\braventos\Documents\R\win-library\4.0\colorspace\libs\x64\colorspace.dll: Permission denied
+2021-12-15 09:27:47	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:27:47	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:27:47	[Main thread]	WARN	utils	unpackPkgZip	restored ‘colorspace’
+2021-12-15 09:27:48	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:27:48	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:27:48	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:27:48	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:27:48	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:27:48	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:27:49	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:27:50	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:27:50	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:27:50	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘farver’
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\farver\libs\x64\farver.dll  a C:\Users\braventos\Documents\R\win-library\4.0\farver\libs\x64\farver.dll: Permission denied
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:27:51	[Main thread]	WARN	utils	unpackPkgZip	restored ‘farver’
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:27:52	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:27:53	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:27:54	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:27:54	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:27:54	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:27:55	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:27:55	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:27:55	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:27:55	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:27:55	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:27:55	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:27:56	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:27:57	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:27:57	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:27:57	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:27:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:27:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:27:58	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:27:58	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:27:58	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:27:58	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:27:59	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:27:59	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:27:59	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:28:00	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:28:07	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:28:07	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:28:07	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:28:10	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:28:10	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:28:10	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:28:11	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:28:11	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:28:11	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘stringi’
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\icudt61l.dat  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\icudt61l.dat: Invalid argument
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:28:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\stringi\libs\x64\stringi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\stringi\libs\x64\stringi.dll: Permission denied
+2021-12-15 09:28:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:28:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:28:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘stringi’
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘digest’
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\digest\libs\x64\digest.dll  a C:\Users\braventos\Documents\R\win-library\4.0\digest\libs\x64\digest.dll: Permission denied
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:28:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘digest’
+2021-12-15 09:28:17	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:28:17	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:28:17	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘jsonlite’
+2021-12-15 09:28:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:28:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:28:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\jsonlite\libs\x64\jsonlite.dll  a C:\Users\braventos\Documents\R\win-library\4.0\jsonlite\libs\x64\jsonlite.dll: Permission denied
+2021-12-15 09:28:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:28:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:28:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘jsonlite’
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘readr’
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\readr\libs\x64\readr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\readr\libs\x64\readr.dll: Permission denied
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:28:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘readr’
+2021-12-15 09:28:53	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:28:53	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:28:53	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:28:54	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:28:54	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:28:54	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:28:54	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:28:54	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:28:54	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:28:57	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da856521244/SqlRender_1.8.1.tar.gz’ had non-zero exit status
+2021-12-15 09:28:57	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da856521244/SqlRender_1.8.1.tar.gz’ had non-zero exit status
+2021-12-15 09:28:57	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da856521244/SqlRender_1.8.1.tar.gz’ had non-zero exit status
+2021-12-15 09:29:12	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:29:12	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:29:12	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘glue’
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\glue\libs\x64\glue.dll  a C:\Users\braventos\Documents\R\win-library\4.0\glue\libs\x64\glue.dll: Permission denied
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	restored ‘glue’
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:29:13	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘rlang’
+2021-12-15 09:29:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:29:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:29:14	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\rlang\libs\x64\rlang.dll  a C:\Users\braventos\Documents\R\win-library\4.0\rlang\libs\x64\rlang.dll: Permission denied
+2021-12-15 09:29:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:29:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:29:14	[Main thread]	WARN	utils	unpackPkgZip	restored ‘rlang’
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘utf8’
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\utf8\libs\x64\utf8.dll  a C:\Users\braventos\Documents\R\win-library\4.0\utf8\libs\x64\utf8.dll: Permission denied
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:29:15	[Main thread]	WARN	utils	unpackPkgZip	restored ‘utf8’
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘fansi’
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\fansi\libs\x64\fansi.dll  a C:\Users\braventos\Documents\R\win-library\4.0\fansi\libs\x64\fansi.dll: Permission denied
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:29:16	[Main thread]	WARN	utils	unpackPkgZip	restored ‘fansi’
+2021-12-15 09:29:17	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:29:17	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:29:17	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘vctrs’
+2021-12-15 09:29:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:29:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:29:18	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll  a C:\Users\braventos\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll: Permission denied
+2021-12-15 09:29:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:29:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:29:18	[Main thread]	WARN	utils	unpackPkgZip	restored ‘vctrs’
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘tibble’
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\tibble\libs\x64\tibble.dll  a C:\Users\braventos\Documents\R\win-library\4.0\tibble\libs\x64\tibble.dll: Permission denied
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:29:19	[Main thread]	WARN	utils	unpackPkgZip	restored ‘tibble’
+2021-12-15 09:29:20	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:29:20	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:29:20	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘ellipsis’
+2021-12-15 09:29:20	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:29:20	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:29:20	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\ellipsis\libs\x64\ellipsis.dll  a C:\Users\braventos\Documents\R\win-library\4.0\ellipsis\libs\x64\ellipsis.dll: Permission denied
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	restored ‘ellipsis’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘cachem’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\cachem\libs\x64\cachem.dll  a C:\Users\braventos\Documents\R\win-library\4.0\cachem\libs\x64\cachem.dll: Permission denied
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:29:21	[Main thread]	WARN	utils	unpackPkgZip	restored ‘cachem’
+2021-12-15 09:29:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:29:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:29:23	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘dplyr’
+2021-12-15 09:29:23	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:29:23	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:29:23	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll  a C:\Users\braventos\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission denied
+2021-12-15 09:29:24	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:29:24	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:29:24	[Main thread]	WARN	utils	unpackPkgZip	restored ‘dplyr’
+2021-12-15 09:29:30	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:29:30	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:29:30	[Main thread]	WARN	utils	unpackPkgZip	cannot remove prior installation of package ‘Rcpp’
+2021-12-15 09:29:33	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:29:33	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:29:33	[Main thread]	WARN	utils	unpackPkgZip	problema al copiar C:\Users\braventos\Documents\R\win-library\4.0\00LOCK\Rcpp\libs\x64\Rcpp.dll  a C:\Users\braventos\Documents\R\win-library\4.0\Rcpp\libs\x64\Rcpp.dll: Permission denied
+2021-12-15 09:29:34	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:29:34	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:29:34	[Main thread]	WARN	utils	unpackPkgZip	restored ‘Rcpp’
+2021-12-15 09:29:38	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da81073399/Andromeda_0.5.0.tar.gz’ had non-zero exit status
+2021-12-15 09:29:38	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da81073399/Andromeda_0.5.0.tar.gz’ had non-zero exit status
+2021-12-15 09:29:38	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da81073399/Andromeda_0.5.0.tar.gz’ had non-zero exit status
+2021-12-15 09:29:44	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da831de64b8/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:29:44	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da831de64b8/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status
+2021-12-15 09:29:44	[Main thread]	WARN	utils	i.p	installation of package ‘C:/Users/BRAVEN~1/AppData/Local/Temp/RtmpmoK1d1/file5da831de64b8/SelfControlledCaseSeries_3.1.0.tar.gz’ had non-zero exit status

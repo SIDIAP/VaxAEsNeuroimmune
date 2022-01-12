@@ -84,6 +84,8 @@ load(here("data", "Jnj_background.pop.IRS.RData"))
 load(here("data", "Jnj.no.covid_background.pop.IRS.RData"))
 # load(here("data", "Jnj_background.pop.visit.IRS.RData"))
 
+load(here("data", "MDRR.RData"))
+load(here("data", "sccsSummary.tidy.RData"))
 
 # printing numbers with 1 decimal place and commas 
 nice.num<-function(x) {
@@ -577,7 +579,84 @@ unique(Pf1_background.pop.IRR$outcome.name))))[1],
   # ,
   # tags$hr(),
   # DTOutput('tbl.IRR')
+),
+# sccs -----
+ tabPanel("SCCS",
+
+    tags$h3("SCCS"),
+    # tags$h5("Incidence rates ratios. Select the target and comparator populations,
+    # whether a year of prior
+    # history was required, Select the study population used,
+    # whether a year of prior history was required for individuals, the time window,
+    # the statification of interest, and
+    #         the outcome of interest."),
+    tags$hr(),
+     div(style="display: inline-block;vertical-align:top; width: 150px;",
+     pickerInput(inputId = "SCCSDatabaseSelector",
+  label = "Database",
+  choices = unique(MDRR$db),
+  selected = unique(MDRR$db)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
+
+               div(style="display: inline-block;vertical-align:top; width: 150px;",
+                pickerInput(inputId = "SccsExposureNameSelector",
+  label = "Study population",
+  choices = unique(MDRR$exposureName),
+  selected = unique(MDRR$exposureName)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
+
+               div(style="display: inline-block;vertical-align:top; width: 150px;",
+                pickerInput(inputId = "SCCSHistory.req",
+  label = "History required",
+  choices = unique(MDRR$history.req),
+  selected = unique(MDRR$history.req)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+  
+      div(style="display: inline-block;vertical-align:top; width: 250px;",
+        pickerInput(inputId = "SCCSOutcomeSelector",
+  label = "Outcome",
+  choices = unique(MDRR$outcomeName),
+  selected = unique(MDRR$outcomeName)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = TRUE)),
+
+      div(style="display: inline-block;vertical-align:top; width: 250px;",
+        pickerInput(inputId = "SCCSAnalysisSelector",
+  label = "Outcome",
+  choices = unique(MDRR$analysisName),
+  selected = unique(MDRR$analysisName)[1],
+  options = list(
+    `actions-box` = TRUE,
+    size = 10,
+    `selected-text-format` = "count > 3"),
+  multiple = FALSE)),
+
+  
+    tags$hr(),
+    tags$h4("MDDR"),
+   DTOutput('tbl.sccs.mddr'),
+  
+      tags$hr(),
+    tags$h4("Results"),
+   DTOutput('tbl.sccs.results')
+
 )
+
 
 # close -----
                                                    ))
@@ -3389,7 +3468,87 @@ output$IRS.plot.overall<- renderPlotly({
     } )
 
   
+get.tbl.sccs.mddr<-reactive({ 
+    
+    # browser()
+  table<-MDRR %>%
+      filter(db %in% input$SCCSDatabaseSelector ) %>% 
+      filter(exposureName %in% input$SccsExposureNameSelector) %>% 
+      filter(outcomeName %in% input$SCCSOutcomeSelector) %>% 
+      filter(analysisName%in%input$SCCSAnalysisSelector)  %>% 
+      filter(history.req%in%input$SCCSHistory.req)  %>% 
+      select(db, exposureName, outcomeName, 
+            timeTotal, propTimeExposed,
+            events,mdrr) %>% 
+    mutate(timeTotal=nice.num.count(timeTotal)) %>% 
+    mutate(events=nice.num.count(events))
+  })
 
+output$tbl.sccs.mddr <-  renderDataTable({
+  # # validate(need(length(input$CohortProfileDatabaseSelector)>0, 
+  # #               "No results for selected inputs"))
+  # # browser()
+     table<-get.tbl.sccs.mddr()
+  # 
+   datatable(table
+    ,rownames= FALSE,
+    colnames = c('Variable' = 1),
+     extensions = 'Buttons',
+    # options = list(lengthChange = FALSE,
+    #                pageLength = 40,
+    #                buttons = c('copy', 'csv', 'excel')))
+    options = list(lengthChange = FALSE,
+                    pageLength = 40,
+                                dom = 'tB',
+                               buttons = list(list(extend = "excel",
+                                             text = "Download table as excel",
+                                             filename = "PatientProfiles.csv"))
+                            ))
+     } )
+
+
+get.tbl.sccs.results<-reactive({ 
+    
+     # browser()
+  table<-sccsSummary.tidy %>%
+      filter(db %in% input$SCCSDatabaseSelector ) %>% 
+      filter(exposureName %in% input$SccsExposureNameSelector) %>% 
+      filter(outcomeName %in% input$SCCSOutcomeSelector) %>% 
+      filter(analysisName%in%input$SCCSAnalysisSelector)  %>% 
+      filter(history.req%in%input$SCCSHistory.req)  %>% 
+    mutate(rr_est=paste0(nice.num2(rr), 
+                         " (", nice.num2(ci95lb), 
+                         " to ",nice.num2(ci95ub),  ")")) %>% 
+    select(-c(rr,ci95lb, ci95ub))
+  # %>% 
+  #     select(db, exposureName, outcomeName, 
+  #           timeTotal, propTimeExposed,
+  #           events,mdrr) %>% 
+  #   mutate(timeTotal=nice.num.count(timeTotal)) %>% 
+  #   mutate(events=nice.num.count(events))
+  })
+
+output$tbl.sccs.results <-  renderDataTable({
+  # # validate(need(length(input$CohortProfileDatabaseSelector)>0, 
+  # #               "No results for selected inputs"))
+  # # browser()
+     table<-get.tbl.sccs.results()
+  # 
+   datatable(table
+    ,rownames= FALSE,
+    colnames = c('Variable' = 1),
+     extensions = 'Buttons',
+    # options = list(lengthChange = FALSE,
+    #                pageLength = 40,
+    #                buttons = c('copy', 'csv', 'excel')))
+    options = list(lengthChange = FALSE,
+                    pageLength = 40,
+                                dom = 'tB',
+                               buttons = list(list(extend = "excel",
+                                             text = "Download table as excel",
+                                             filename = "PatientProfiles.csv"))
+                            ))
+     } )
  }
   
 

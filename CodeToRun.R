@@ -29,7 +29,7 @@ library(dplyr)
 library(tidyr)
 library(here)
 library(stringr)
-
+library(SelfControlledCaseSeries)
 
 # please load the above packages 
 # you should have them all available, with the required version, after
@@ -109,9 +109,12 @@ start_date_covid <- dmy("01/09/2020") #start date for covid-19 cohorts
 
 # run the background rates analysis ----
 run.analysis.with.sampling<-FALSE
+
+# backround rates
 start<-Sys.time()
 source(here("RunAnalysis.R"))
 Sys.time()-start
+
 
 
 

@@ -3470,7 +3470,7 @@ output$IRS.plot.overall<- renderPlotly({
   
 get.tbl.sccs.mddr<-reactive({ 
     
-    # browser()
+     # browser()
   table<-MDRR %>%
       filter(db %in% input$SCCSDatabaseSelector ) %>% 
       filter(exposureName %in% input$SccsExposureNameSelector) %>% 

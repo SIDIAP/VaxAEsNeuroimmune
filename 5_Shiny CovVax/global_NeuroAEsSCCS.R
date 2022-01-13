@@ -1,6 +1,6 @@
 
 # SCCS MDDR and results -----
-tosOfInterest <- read_delim("C:/Users/eburn/Dropbox/OHDSI/covid/Coagulopathy/sidiap github vax incidence general code/VaxAEsNeuroimmune/3_SccsAnalysis/Settings/tosOfInterest.csv", 
+tosOfInterest <- read_delim(here("data","tosOfInterest.csv"), 
     delim = ";", escape_double = FALSE, trim_ws = TRUE) 
 tosOfInterest<-tosOfInterest[,2:6]
 
@@ -20,20 +20,22 @@ analysis.ids<-data.frame(
                  "age and season model 21 d without split"))
 
 
-MDRR_sidiap <- read_csv("C:/Users/eburn/Dropbox/OHDSI/covid/Coagulopathy/sidiap github vax incidence general code/VaxAEsNeuroimmune/3_SccsAnalysis/output.folder/MDRR_all_sidiap.csv")
+MDRR_sidiap <- read_csv(here("data","MDRR_all_sidiap.csv"))
+MDRR_cprd <- read_csv(here("data","MDRR_all_cprd.csv"))
 
 
 
 MDRR_sidiap <-MDRR_sidiap %>% 
-  mutate(db="SIDIAP") %>% 
-  mutate(history.req=ifelse(str_detect(ExposureGroup, "w_history"),
-                                   "Yes", "No"))
+  mutate(db="SIDIAP") 
+MDRR_cprd <-MDRR_cprd %>% 
+  mutate(db="CPRD")
 
-# add cprd here
-
-MDRR<-bind_rows(MDRR_sidiap) %>% # add cprd here
+MDRR<-bind_rows(MDRR_sidiap, MDRR_cprd) %>% 
   left_join(tosOfInterest) %>% 
-  left_join(analysis.ids)
+  left_join(analysis.ids)%>% 
+  mutate(history.req=ifelse(str_detect(ExposureGroup, "w_history"),
+                                   "Yes", "No")) %>% 
+  filter(!ExposureGroup %in%  c("Vax_21d", "Cov_21d"))
 
 table(MDRR$exposureName)
 MDRR<-MDRR %>% 
@@ -44,14 +46,13 @@ save(MDRR, file = here("data", "MDRR.RData"))
 
 
 
-sccsSummary_all_sidiap <- read_csv("C:/Users/eburn/Dropbox/OHDSI/covid/Coagulopathy/sidiap github vax incidence general code/VaxAEsNeuroimmune/3_SccsAnalysis/output.folder/sccsSummary_all_sidiap.csv")
+sccsSummary_all_sidiap <- read_csv(here("data","sccsSummary_all_sidiap.csv"))
+sccsSummary_all_cprd <- read_csv(here("data","sccsSummary_all_cprd.csv"))
 
 sccsSummary_all_sidiap <-sccsSummary_all_sidiap %>% 
-  mutate(db="SIDIAP")%>% 
-  mutate(history.req=ifelse(str_detect(ExposureGroup, "w_history"),
-                                   "Yes", "No"))
-
-# add cprd here
+  mutate(db="SIDIAP")
+sccsSummary_all_cprd <-sccsSummary_all_cprd %>% 
+  mutate(db="CPRD")
 
 nrow(sccsSummary_all_sidiap %>% 
        select(analysisId,exposureId,
@@ -60,9 +61,14 @@ nrow(sccsSummary_all_sidiap %>%
   nrow(sccsSummary_all_sidiap)
 
 
-sccsSummary<-bind_rows(sccsSummary_all_sidiap) %>%  # add cprd here
+sccsSummary<-bind_rows(sccsSummary_all_sidiap,
+                       sccsSummary_all_cprd) %>%  
   left_join(analysis.ids) %>%
-  left_join(tosOfInterest) 
+  left_join(tosOfInterest) %>% 
+  mutate(history.req=ifelse(str_detect(ExposureGroup, "w_history"),
+                                   "Yes", "No"))%>% 
+  filter(!ExposureGroup %in%  c("Vax_21d", "Cov_21d"))
+
 
 
 # split up, and join - tidy format

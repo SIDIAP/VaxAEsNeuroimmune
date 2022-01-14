@@ -165,7 +165,7 @@ outputFolder_Cov_w_history <- file.path(output.folder,"Cov_w_history")
 outputFolderNames <- c(outputFolder_Vax,outputFolder_Vax_w_history,outputFolder_Cov,outputFolder_Cov_w_history)#outputFolder_Vax_21d,outputFolder_Cov_21d,
 for (outputFolderName in outputFolderNames){
   reference <- readRDS(file.path(outputFolderName, "outcomeModelReference.rds"))
-  reference_InUse <- reference %>% filter(analysisId %in% c(2,4,5) & exposureId %in% c(1,3,8,10,15,16) & outcomeId ==1 )
+  reference_InUse <- reference %>% filter(analysisId %in% c(2,4,5) & exposureId %in% c(1,3,5,7,8,10,12,14,15,16) & outcomeId ==1 )
   
   results <- list()
   for (i in 1 : nrow(reference_InUse)){

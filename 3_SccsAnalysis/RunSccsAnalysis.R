@@ -196,6 +196,14 @@ for (outputFolderName in outputFolderNames){
   results_all[[AnaName]]$ExposureGroup <- AnaName
 }
 results_all <- bind_rows(results_all)
+results_all <- results_all %>% mutate(IRR=
+                         ifelse(!originalEraName=="",
+                                paste0(nice.num2(estimate),
+                                       " (",
+                                       nice.num2(lb95Ci),
+                                       " to ",
+                                       nice.num2(ub95Ci), ")"
+                                ), "Ref"))
 readr::write_csv(results_all, file.path(output.folder, "results_all.csv"))
 saveRDS(results_all,file.path(output.folder, "results_all.RDS"))
 

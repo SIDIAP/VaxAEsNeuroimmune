@@ -196,8 +196,8 @@ for (outputFolderName in outputFolderNames){
   results_all[[AnaName]]$ExposureGroup <- AnaName
 }
 results_all <- bind_rows(results_all)
-readr::write_csv(sccsSummary_all, file.path(output.folder, "results_all.csv"))
-saveRDS(sccsSummary_all,file.path(output.folder, "results_all.RDS"))
+readr::write_csv(results_all, file.path(output.folder, "results_all.csv"))
+saveRDS(results_all,file.path(output.folder, "results_all.RDS"))
 
 
 # get mdrrs -----
